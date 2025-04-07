@@ -1,0 +1,34 @@
+name: cacicoinsajt
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_web3: ^2.1.9
+  gif: ^2.3.0
+  google_fonts: ^6.2.1
+  hex: ^0.2.0
+  http: ^1.3.0
+  image: ^4.5.4
+  image_picker_web: ^4.0.0
+  js_interop: ^0.0.1
+  supabase_flutter: ^2.8.4
+  url_launcher: ^6.3.1
+  wallet_connect_v2: ^1.0.9
+  walletconnect_dart: ^0.0.11
+  web3dart: ^2.7.1
+
+dev_dependencies:
+  flutter_lints: ^5.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
