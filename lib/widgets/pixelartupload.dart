@@ -74,7 +74,7 @@ class _PixelArtUploadFormState extends State<PixelArtUploadForm> {
   }
 
   Future<String> _uploadImageToStorage() async {
-    if (_editedImage == null) throw Exception('No image to upload');
+    if (_editedImage == null) _showError('Unesi sliku!!');
 
     final imageName = '${uuid.v4()}.png';
 

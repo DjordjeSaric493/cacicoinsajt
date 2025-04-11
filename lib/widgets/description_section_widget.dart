@@ -63,7 +63,9 @@ class DescriptionSection extends StatelessWidget {
                     ),
                     const SizedBox(width: 16),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed:
+                          () //TODO:IMPLEMENTIRAJ OTVARANJE ONOG TEKSTA SA SKROLOM KADA KLIKNE OVDE!
+                          {},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.red,
                         foregroundColor: Colors.white,

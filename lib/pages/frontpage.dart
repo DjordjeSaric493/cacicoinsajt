@@ -1,14 +1,16 @@
 import 'package:cacicoinsajt/utils/text/textstyles.dart';
 import 'package:cacicoinsajt/widgets/dodajcacija.dart';
-import 'package:cacicoinsajt/widgets/pump_bar.dart';
+import 'package:cacicoinsajt/widgets/button,bar,util%20widg/dodajcacijabutt.dart';
+import 'package:cacicoinsajt/widgets/entercacilend.dart';
+import 'package:cacicoinsajt/widgets/button,bar,util%20widg/pump_bar.dart';
+import 'package:cacicoinsajt/widgets/zidsramatekst.dart';
 import 'package:flutter/material.dart';
 import 'package:cacicoinsajt/widgets/app_bar_widget.dart';
-import 'package:cacicoinsajt/widgets/mobile_drawer_widget.dart';
+import 'package:cacicoinsajt/widgets/button,bar,util%20widg/mobile_drawer_widget.dart';
 import 'package:cacicoinsajt/widgets/hero_section_widget.dart';
 import 'package:cacicoinsajt/widgets/description_section_widget.dart';
 import 'package:cacicoinsajt/widgets/caci_coin_section_widget.dart';
 import 'package:cacicoinsajt/widgets/uputstvosrb.dart';
-import 'dart:js' as js;
 
 class FrontPage extends StatefulWidget {
   const FrontPage({super.key});
@@ -18,12 +20,6 @@ class FrontPage extends StatefulWidget {
 }
 
 class _FrontPageState extends State<FrontPage> {
-  bool _isLoading = false;
-  bool _isMetaMaskInstalled = false;
-  String? _connectedAddress;
-  final String _presaleContractAddress =
-      'TVOJA_PRESALE_ADRESA_SA_TESTNETA'; // ZAMENI PRAVOM ADRESOM
-
   @override
   void initState() {
     super.initState();
@@ -84,19 +80,22 @@ class _FrontPageState extends State<FrontPage> {
                               const SizedBox(height: 20),
                               PresalePumpWidget(),
                               const SizedBox(height: 20),
-                              Padding(
-                                padding: EdgeInsets.only(
-                                  left: isMobile ? 20 : 50,
-                                ),
-                                child: Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    'Uđi u Ćacilend',
-                                    style: deliciousTextStyleBig,
-                                  ),
-                                ),
+
+                              UdjiUCacilend(
+                                isMobile: isMobile,
+                                appBarWidth: appBarWidth,
                               ),
-                              PixelArtScreen(), //problematičan ekran
+                              const SizedBox(height: 20),
+                              ZidSramaText(isMobile: isMobile),
+                              const SizedBox(height: 20),
+                              Text(
+                                'Dodaj svog Ćacija!!!',
+                                style: dekkoTextStyle,
+                              ),
+                              PixelArtButton(
+                                isMobile: isMobile,
+                                onPressed: () {},
+                              ),
                             ],
                           ),
                         ),
