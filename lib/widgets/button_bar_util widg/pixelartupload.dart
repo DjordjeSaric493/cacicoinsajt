@@ -1,11 +1,13 @@
-import 'dart:io';
-import 'dart:typed_data'; // For Uint8List
+import 'dart:convert';
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:image/image.dart' as img;
 import 'package:image_picker_web/image_picker_web.dart';
 import 'package:cacicoinsajt/utils/text/textstyles.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:uuid/uuid.dart';
+import 'package:validators/validators.dart'; // For validating wallet format
+import 'dart:html' as html; // Import for web download
 
 class PixelArtUploadForm extends StatefulWidget {
   const PixelArtUploadForm({super.key});
@@ -80,14 +82,14 @@ class _PixelArtUploadFormState extends State<PixelArtUploadForm> {
 
     try {
       await supabase.storage
-          .from('pixel_art_images')
+          .from('cacislike') // Ispravljen naziv bucket-a
           .uploadBinary(
             imageName,
             _editedImage!,
             fileOptions: FileOptions(contentType: 'image/png', upsert: false),
           );
 
-      return supabase.storage.from('pixel_art_images').getPublicUrl(imageName);
+      return supabase.storage.from('cacislike').getPublicUrl(imageName);
     } catch (e) {
       throw Exception('Failed to upload image: $e');
     }
@@ -108,9 +110,30 @@ class _PixelArtUploadFormState extends State<PixelArtUploadForm> {
     });
   }
 
+  bool _isValidWalletId(String walletId) {
+    // Proverava da li počinje sa 0x i ima tačno 42 karaktera
+    if (!walletId.startsWith('0x') || walletId.length != 42) {
+      return false;
+    }
+
+    // Proverava da li su preostali karakteri heksadecimalni
+    final hexPart = walletId.substring(2);
+    return isHexadecimal(hexPart);
+  }
+
   Future<void> _submitForm() async {
     if (_walletController.text.isEmpty) {
       _showError("Molimo unesite Wallet ID");
+      return;
+    }
+
+    if (!_isValidWalletId(_walletController.text)) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Loš format wallet-a'),
+          duration: Duration(seconds: 4),
+        ),
+      );
       return;
     }
 
@@ -134,6 +157,35 @@ class _PixelArtUploadFormState extends State<PixelArtUploadForm> {
     } finally {
       setState(() => _isUploading = false);
     }
+  }
+
+  Future<void> _downloadImage() async {
+    if (_editedImage == null) return;
+
+    final base64 = base64Encode(_editedImage!);
+    final anchor = html.AnchorElement(href: 'data:image/png;base64,$base64');
+    anchor.download = 'pixel_art.png'; // Naziv preuzete datoteke
+    html.document.body?.children.add(anchor);
+    anchor.click();
+    html.document.body?.children.remove(anchor);
+    _showSuccessDownload();
+  }
+
+  void _showSuccessDownload() {
+    showDialog(
+      context: context,
+      builder:
+          (context) => AlertDialog(
+            title: const Text("Uspešno!"),
+            content: const Text("Slika je preuzeta."),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text("OK"),
+              ),
+            ],
+          ),
+    );
   }
 
   void _showSuccess() {
@@ -231,6 +283,25 @@ class _PixelArtUploadFormState extends State<PixelArtUploadForm> {
             readOnly: true,
           ),
           const SizedBox(height: 20),
+          TextField(
+            controller: _walletController,
+            decoration: InputDecoration(
+              labelText: 'Unesi Wallet ID',
+              hintText: '0x... (42 karaktera)',
+              border: const OutlineInputBorder(),
+              errorText:
+                  _walletController.text.isNotEmpty &&
+                          !_isValidWalletId(_walletController.text)
+                      ? 'Wallet ID mora početi sa 0x i imati tačno 42 karaktera'
+                      : null,
+            ),
+            maxLength: 42,
+            onChanged: (value) {
+              setState(() {}); // Da bi se osvežila validacija
+            },
+          ),
+          const SizedBox(height: 20),
+
           ElevatedButton(
             onPressed: _pickImage,
             child: const Text('Izaberi sliku'),
@@ -240,18 +311,21 @@ class _PixelArtUploadFormState extends State<PixelArtUploadForm> {
             const Text("Pregled slike:", textAlign: TextAlign.center),
             const SizedBox(height: 10),
             Image.memory(_editedImage!, fit: BoxFit.contain),
-            const SizedBox(height: 20),
-            const Text('Wallet ID'),
             const SizedBox(height: 10),
-            TextField(
-              controller: _walletController,
-              decoration: const InputDecoration(
-                labelText: 'Unesi Wallet ID',
-                border: OutlineInputBorder(),
-              ),
+            Text(
+              _wordController.text.trim().isNotEmpty
+                  ? '${_wordController.text.trim()} Ćaci'
+                  : 'Ćaci',
+              textAlign: TextAlign.center,
+              style: dekkoTextSmall,
             ),
             const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: _downloadImage,
+              child: const Text("Preuzmi sliku"),
+            ),
           ],
+          const SizedBox(height: 20),
           ElevatedButton(
             onPressed: _isUploading ? null : _submitForm,
             style: ElevatedButton.styleFrom(

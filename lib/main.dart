@@ -1,4 +1,6 @@
 import 'package:cacicoinsajt/pages/frontpage.dart';
+import 'package:cacicoinsajt/pages/nebudicaci.dart';
+import 'package:cacicoinsajt/utils/text/appstrings.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -7,8 +9,10 @@ void main() async {
 
   // Inicijalizacija Supabase-a
   await Supabase.initialize(
-    url: 'YOUR_SUPABASE_URL', // Zamenite sa pravim URL-om
-    anonKey: 'YOUR_SUPABASE_ANON_KEY', // Zamenite sa pravim anonKey-om
+    //TODO:!!!!
+    url:
+        'https://hstbygknwbgvfsdopkhd.supabase.co', // Zamenite sa pravim URL-om
+    anonKey: AppStringsEng.anonkey, // Zamenite sa pravim anonKey-om
   );
 
   runApp(const MainApp());
@@ -19,6 +23,16 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: FrontPage());
+    return MaterialApp(
+      initialRoute: '/', // Postavite početnu rutu
+      routes: {
+        '/': (context) => const FrontPage(), // Ruta za početnu stranicu
+        '/cacicoin':
+            (context) => const FrontPage(), // Ruta za ĆaciCoin stranicu
+        '/nebudicaci':
+            (context) =>
+                const NebudiCaciScreen(), // Ruta za Ne Budi Ćaci stranicu
+      },
+    );
   }
 }

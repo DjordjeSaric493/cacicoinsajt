@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:cacicoinsajt/utils/text/textstyles.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -34,11 +35,29 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  _buildNavItem('Twitter'),
-                  _buildNavItem('Instagram'),
-                  _buildNavItem('Telegram'),
-                  _buildNavItem('ĆaciCoin'),
-                  _buildNavItem('ne budi ćaci'),
+                  _buildNavItem(
+                    'Twitter',
+                    () => _launchURL('https://twitter.com/tvoj_nalog'),
+                  ),
+                  _buildNavItem(
+                    'Instagram',
+                    () => _launchURL('https://instagram.com/tvoj_nalog'),
+                  ),
+                  _buildNavItem(
+                    'Telegram',
+                    () => _launchURL('https://t.me/tvoj_kanal'),
+                  ),
+                  _buildNavItem(
+                    'ĆaciCoin',
+                    () => Navigator.pushNamed(context, '/cacicoin'),
+                  ),
+                  _buildNavItem(
+                    'ne budi ćaci',
+                    () => Navigator.pushNamed(
+                      context,
+                      '/nebudicaci',
+                    ), //POGLEDAJ OVDE MI NIJE UVEZAO
+                  ),
                 ],
               ),
             ),
@@ -46,11 +65,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         );
   }
 
-  Widget _buildNavItem(String title) {
+  Widget _buildNavItem(String title, VoidCallback onPressed) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: TextButton(
-        onPressed: () {},
+        onPressed: onPressed,
         child: Text(
           title,
           style: dekkoTextStyle,
@@ -58,6 +77,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
     );
+  }
+
+  static Future<void> _launchURL(String url) async {
+    final uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 
   @override

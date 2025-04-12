@@ -1,15 +1,12 @@
 import 'package:cacicoinsajt/utils/text/textstyles.dart';
-import 'package:cacicoinsajt/widgets/button,bar,util%20widg/buycaci_butt.dart';
-import 'package:cacicoinsajt/widgets/poveziwallet.dart';
-import 'package:cacicoinsajt/widgets/widg2.dart';
+import 'package:cacicoinsajt/widgets/button_bar_util%20widg/widg2.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Uputstvosrb extends StatefulWidget {
-  const Uputstvosrb({
-    super.key,
-  }); //TODO:IZMENI DA NE MORA DA IMA ONPURCHASE OVDE KAO REQUIRED
+  const Uputstvosrb({super.key});
 
   @override
   State<Uputstvosrb> createState() => _UputstvosrbState();
@@ -19,22 +16,9 @@ enum InstructionItemLayout { defaultLayout, columnWithImage }
 
 class _UputstvosrbState extends State<Uputstvosrb> {
   final TextEditingController _amountController = TextEditingController();
+  bool _isProcessing = false;
   bool _showSuccess = false;
-  bool _isConnected = false; // Ova vrednost zavisi od tvog stanja veze
-  String _connectedAddress = ''; // Dodata varijabla za adresu povezanog walleta
-  bool _isProcessing = false; // Kontroliše učitavanje
-  double _bnbValue = 0.0; // Vrednost BNB-a koju korisnik unosi
   double _maxCaciCoins = 1000000; // Example max limit for presale
-
-  void _onWalletConnected(String address) {
-    setState(() {
-      _isConnected = true;
-      _connectedAddress = address;
-      print(
-        'Povezan wallet: $address',
-      ); // Možete dodati logiku šta se dešava kada se wallet poveže
-    });
-  }
 
   @override
   void dispose() {
@@ -64,17 +48,7 @@ class _UputstvosrbState extends State<Uputstvosrb> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    // Item 0 - Connect Wallet Button
-                    _buildBaseItem(
-                      index: -1, // Koristimo -1 jer je ovo prvi korak
-                      isMobile: isMobile,
-                      child: Center(
-                        child: ConnectWalletButton(
-                          onConnected: _onWalletConnected,
-                        ),
-                      ),
-                    ),
-                    // Item 1
+                    // Item 0
                     _buildBaseItem(
                       index: 0,
                       isMobile: isMobile,
@@ -403,28 +377,27 @@ class _UputstvosrbState extends State<Uputstvosrb> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  '(max. količina 1000000 Ćacija po osobi)',
+                  '(max. količina ??? Ćacija po osobi)',
                   style: TextStyle(fontSize: 14),
                 ),
                 const SizedBox(height: 8),
-
-                // Integracija BuyButton-a
-                BuyButton(
-                  isConnected: _isConnected,
-                  isLoading: _isProcessing,
-                  bnbValue: _bnbValue,
-                  onStart: () {
-                    setState(() {
-                      _isProcessing = true;
-                    });
-                  },
-                  onFinish: () {
-                    setState(() {
-                      _isProcessing = false;
-                    });
-                  },
-
-                  context: context,
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red,
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    minimumSize: const Size(double.infinity, 50),
+                  ),
+                  onPressed: _isProcessing ? null : _handlePurchase,
+                  child:
+                      _isProcessing
+                          ? const CircularProgressIndicator(color: Colors.white)
+                          : const Text(
+                            'POTVRDI KUPOVINU',
+                            style: TextStyle(color: Colors.white, fontSize: 16),
+                          ),
                 ),
               ],
             ),
@@ -482,6 +455,13 @@ class _UputstvosrbState extends State<Uputstvosrb> {
             ),
       ),
     );
+  }
+
+  void _handlePurchase() async {
+    final amount = double.tryParse(_amountController.text) ?? 0;
+    if (amount <= 0) return;
+
+    setState(() => _isProcessing = true);
   }
 
   String _calculateTokenAmount(String bnbAmount) {

@@ -1,5 +1,5 @@
 import 'package:cacicoinsajt/utils/text/textstyles.dart';
-import 'package:cacicoinsajt/widgets/pixelartupload.dart';
+import 'package:cacicoinsajt/widgets/button_bar_util%20widg/pixelartupload.dart';
 import 'package:flutter/material.dart';
 
 class PixelArtScreen extends StatelessWidget {
@@ -8,7 +8,7 @@ class PixelArtScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: const Color(0xFFD9D9D9),
         borderRadius: BorderRadius.circular(12),
@@ -25,12 +25,12 @@ class PixelArtScreen extends StatelessWidget {
           Text(
             'Tvoj Ćaci će biti ubačen u Ćacilend i prikazan na sajtu!!!',
             textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 14),
+            style: dekkoTextStyle,
           ),
           const SizedBox(height: 10),
           Text(
-            'Nagrada: ??? Ćacicoin-a',
-            style: dekkoTextSmall,
+            'Nagrada: 1000 Ćacicoin-a (max 3 puta po wallet)',
+            style: dekkoTextStyleRed,
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 20),

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:cacicoinsajt/utils/text/appstrings.dart';
 import 'package:cacicoinsajt/utils/text/textstyles.dart';
 
-class DescriptionSection extends StatelessWidget {
+class DescriptionSection extends StatefulWidget {
   final bool isMobile;
   final double appBarWidth;
 
@@ -13,29 +14,127 @@ class DescriptionSection extends StatelessWidget {
   });
 
   @override
+  _DescriptionSectionState createState() => _DescriptionSectionState();
+}
+
+class _DescriptionSectionState extends State<DescriptionSection> {
+  final ScrollController _scrollController = ScrollController();
+  bool _autoScroll = false;
+
+  void _startAutoScroll() {
+    Future.delayed(Duration(seconds: 1), () {
+      if (_autoScroll && _scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: Duration(seconds: 60),
+          curve: Curves.linear,
+        );
+      }
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        width: appBarWidth * 0.85,
+        width: widget.appBarWidth * 0.85,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 25),
           child: Column(
             children: [
-              if (isMobile) ...[
+              if (widget.isMobile) ...[
                 Column(
                   children: [
                     Text(
-                      "pročitaj detaljan opis klikom na",
+                      AppStringsSrb.readDescription,
                       style: GoogleFonts.dekko(
                         color: Colors.red,
-                        fontSize: isMobile ? 24 : 40,
+                        fontSize: widget.isMobile ? 24 : 46,
                         fontWeight: FontWeight.bold,
                       ),
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 16),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return Dialog(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: Builder(
+                                builder: (context) {
+                                  return Container(
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.8,
+                                    height:
+                                        MediaQuery.of(context).size.height *
+                                        0.7,
+                                    padding: EdgeInsets.all(16),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(12),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black26,
+                                          blurRadius: 8,
+                                        ),
+                                      ],
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            IconButton(
+                                              icon: Icon(Icons.close),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                          ],
+                                        ),
+                                        Expanded(
+                                          child: SingleChildScrollView(
+                                            controller: _scrollController,
+                                            child: Text(
+                                              OpisCacijaSrb.opis,
+                                              style: GoogleFonts.dekko(
+                                                fontSize: 50,
+                                              ),
+                                              textAlign: TextAlign.start,
+                                            ),
+                                          ),
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text('Auto-scroll:'),
+                                            Switch(
+                                              value: _autoScroll,
+                                              onChanged: (value) {
+                                                setState(() {
+                                                  _autoScroll = value;
+                                                  if (_autoScroll)
+                                                    _startAutoScroll();
+                                                });
+                                              },
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  );
+                                },
+                              ),
+                            );
+                          },
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.red,
                         foregroundColor: Colors.white,
@@ -44,11 +143,11 @@ class DescriptionSection extends StatelessWidget {
                           vertical: 12,
                         ),
                         textStyle: GoogleFonts.dekko(
-                          fontSize: isMobile ? 18 : 24,
+                          fontSize: widget.isMobile ? 18 : 24,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      child: const Text('opis Ćacija'),
+                      child: Text(AppStringsSrb.descriptionButton),
                     ),
                   ],
                 ),
@@ -58,14 +157,90 @@ class DescriptionSection extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      "pročitaj detaljan opis klikom na",
+                      AppStringsSrb.readDescription,
                       style: GoogleFonts.dekko(color: Colors.red, fontSize: 40),
                     ),
                     const SizedBox(width: 16),
                     ElevatedButton(
-                      onPressed:
-                          () //TODO:IMPLEMENTIRAJ OTVARANJE ONOG TEKSTA SA SKROLOM KADA KLIKNE OVDE!
-                          {},
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return Dialog(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: Builder(
+                                builder: (context) {
+                                  return Container(
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.8,
+                                    height:
+                                        MediaQuery.of(context).size.height *
+                                        0.7,
+                                    padding: EdgeInsets.all(16),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(12),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black26,
+                                          blurRadius: 8,
+                                        ),
+                                      ],
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            IconButton(
+                                              icon: Icon(Icons.close),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                          ],
+                                        ),
+                                        Expanded(
+                                          child: SingleChildScrollView(
+                                            controller: _scrollController,
+                                            child: Text(
+                                              OpisCacijaSrb.opis,
+                                              style: GoogleFonts.dekko(
+                                                fontSize: 16,
+                                              ),
+                                              textAlign: TextAlign.start,
+                                            ),
+                                          ),
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text('Auto-scroll:'),
+                                            Switch(
+                                              value: _autoScroll,
+                                              onChanged: (value) {
+                                                setState(() {
+                                                  _autoScroll = value;
+                                                  if (_autoScroll)
+                                                    _startAutoScroll();
+                                                });
+                                              },
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  );
+                                },
+                              ),
+                            );
+                          },
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.red,
                         foregroundColor: Colors.white,
@@ -78,7 +253,7 @@ class DescriptionSection extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      child: const Text('opis Ćacija'),
+                      child: Text(AppStringsSrb.descriptionButton),
                     ),
                   ],
                 ),
@@ -86,7 +261,7 @@ class DescriptionSection extends StatelessWidget {
               const SizedBox(height: 30),
               Center(
                 child: Text(
-                  'Ko smo mi?',
+                  AppStringsSrb.whoAreWe,
                   style: deliciousTextStyleBig,
                   textAlign: TextAlign.start,
                 ),
@@ -94,10 +269,7 @@ class DescriptionSection extends StatelessWidget {
               const SizedBox(height: 20),
               Center(
                 child: Text(
-                  'Mi smo tim koji stoji iza ĆaciCoin-a najšaljivijeg kripto projekta na internetu!\n\n'
-                  'ĆaciCoin je parodija na etiku ličnosti, ali sa ozbiljnom misijom - da ukaže na pogrešne vrednosti i pokrene etiku karaktera.\n\n'
-                  'Iako sve radimo sa osmehom, ne zaboravljamo ni one kojima je pomoć najpotrebnija zato će ĆaciCoin imati i humanitarnu crtu, jer smeh i dobrota idu ruku pod ruku!\n\n'
-                  'Pridruži se našoj zajednici i postani deo krypto revolucije u buđenju svesti, empatije i savesti kod ljudi!',
+                  AppStringsSrb.whoAreWeDescription,
                   style: dekkoTextStyle,
                   textAlign: TextAlign.center,
                 ),

@@ -1,3 +1,4 @@
+import 'package:cacicoinsajt/utils/text/textstyles.dart';
 import 'package:flutter/material.dart';
 import 'package:js/js.dart';
 import 'package:js/js_util.dart' as js_util;
@@ -65,8 +66,19 @@ class BuyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        //padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+        textStyle: const TextStyle(fontSize: 25), // Veći tekst
+      ),
       onPressed: isConnected && !isLoading ? buyTokens : null,
-      child: isLoading ? const CircularProgressIndicator() : const Text('Kupi'),
+      child:
+          isLoading
+              ? const SizedBox(
+                width: 60,
+                height: 60,
+                child: CircularProgressIndicator(strokeWidth: 2),
+              )
+              : Text('Kupi', style: dekkoTextStyle),
     );
   }
 }

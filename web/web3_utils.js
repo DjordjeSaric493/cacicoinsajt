@@ -15,7 +15,7 @@ async function loadContract() {
   const provider = new ethers.providers.Web3Provider(window.ethereum);
   const signer = provider.getSigner();
 
-  const contractAddress = '0x757be8f26d34b3e2b5aa79afb728c26e6e2770ee'; //MOJ UGOVOR?
+  const contractAddress = '0x63539CF43cE777c6DfAdBE484De53246cE7eF134'; //MOJ UGOVOR?
   const contract = new ethers.Contract(contractAddress, abi, signer);
 
   return contract;

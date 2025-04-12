@@ -28,7 +28,7 @@ class UdjiUCacilend extends StatelessWidget {
               padding: EdgeInsets.only(left: isMobile ? 20 : 50),
               child: Text(
                 'Učešće u ovim igrama se uvek nagrađuje dodatnim ĆaciCoin-ima! \n Uskoro',
-                style: dekkoTextSmall,
+                style: dekkoTextStyle,
               ),
             ),
             SizedBox(height: isMobile ? 20 : 40),

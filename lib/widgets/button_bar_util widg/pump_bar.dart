@@ -17,23 +17,6 @@ class _PresalePumpWidgetState extends State<PresalePumpWidget> {
   final int durationInDays = 30;
   bool isLoading = false;
 
-  Future<void> _buyTokens() async {
-    setState(() {
-      isLoading = true;
-    });
-
-    // Simulacija uspešne transakcije
-    await Future.delayed(const Duration(seconds: 2)); // Simulacija kašnjenja
-    setState(() {
-      isLoading = false;
-    });
-
-    // Prikazivanje poruke o uspehu
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(const SnackBar(content: Text("Uspešna transakcija!")));
-  }
-
   @override
   Widget build(BuildContext context) {
     final DateTime now = DateTime.now();
@@ -71,29 +54,7 @@ class _PresalePumpWidgetState extends State<PresalePumpWidget> {
 
         const SizedBox(height: 20),
 
-        // BUTTON
-        ElevatedButton.icon(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.redAccent,
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-          onPressed: isLoading ? null : _buyTokens,
-          icon:
-              isLoading
-                  ? const SizedBox(
-                    width: 24,
-                    height: 24,
-                    child: CircularProgressIndicator(color: Colors.white),
-                  )
-                  : const Icon(Icons.local_gas_station),
-          label: Text(
-            isLoading ? "Procesiranje..." : "Pumpaj PreSale",
-            style: const TextStyle(fontSize: 18),
-          ),
-        ),
+        // TODO: BUTTON KAD SMISLIMO
       ],
     );
   }
