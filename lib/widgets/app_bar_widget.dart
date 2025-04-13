@@ -35,6 +35,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
+                  //TODO: NALEPI X,INSTAGRAM I DISCORD!!
                   _buildNavItem(
                     'Twitter',
                     () => _launchURL('https://twitter.com/tvoj_nalog'),
@@ -44,7 +45,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                     () => _launchURL('https://instagram.com/tvoj_nalog'),
                   ),
                   _buildNavItem(
-                    'Telegram',
+                    'Discord',
                     () => _launchURL('https://t.me/tvoj_kanal'),
                   ),
                   _buildNavItem(
