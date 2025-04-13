@@ -35,7 +35,8 @@ class _PresalePumpWidgetState extends State<PresalePumpWidget> {
           width: 200,
           height: 200,
         ),
-
+        //TODO: nasminkaj bar
+        // 
         // PROGRESS BAR
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
