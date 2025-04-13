@@ -78,7 +78,7 @@ class _CrtTokenomicsMonitorState extends State<CrtTokenomicsMonitor> {
                 ),
                 _buildFramedText(
                   context,
-                  'HUMANITARNI DEO: 10,000,000,000 ĆACI',
+                  'HUMANITARNI DEO: 20,000,000,000 ĆACI',
                 ),
               ],
             ),

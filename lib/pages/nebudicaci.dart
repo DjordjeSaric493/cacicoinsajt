@@ -38,7 +38,9 @@ class NebudiCaciScreen extends StatelessWidget {
                   style: dekkoTextStyle.copyWith(fontSize: 34),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(
+                  height: 30,
+                ), //OSTALO BRIŠI, DASMI OSTANU SAMO TEKST I APPBAR I DRAWER
                 GridView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),

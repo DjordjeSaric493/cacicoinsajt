@@ -45,6 +45,11 @@ final TextStyle deliciousTextStyleBigRed = GoogleFonts.deliciousHandrawn(
   fontWeight: FontWeight.w400, // Regular težina
   color: const Color.fromARGB(255, 240, 24, 24),
 );
+final TextStyle deliciousTextStyleRed = GoogleFonts.deliciousHandrawn(
+  fontSize: 36,
+  fontWeight: FontWeight.w400, // Regular težina
+  color: const Color.fromARGB(255, 240, 24, 24),
+);
 final TextStyle deliciousTextStyleSmallWhite = GoogleFonts.deliciousHandrawn(
   fontSize: 20,
   fontWeight: FontWeight.w400, // Regular težina

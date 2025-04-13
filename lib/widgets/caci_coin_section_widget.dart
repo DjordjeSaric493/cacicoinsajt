@@ -1,6 +1,8 @@
+import 'package:cacicoinsajt/utils/text/appstrings.dart';
 import 'package:cacicoinsajt/widgets/button_bar_util%20widg/buycaci_butt.dart';
 import 'package:cacicoinsajt/widgets/button_bar_util%20widg/crttokenomicsmonitor.dart';
 import 'package:cacicoinsajt/widgets/button_bar_util%20widg/poveziwallet.dart';
+import 'package:cacicoinsajt/widgets/button_bar_util%20widg/ugovori_butt.dart';
 import 'package:cacicoinsajt/widgets/uputstvopravo.dart';
 import 'package:flutter/material.dart';
 import 'package:cacicoinsajt/utils/text/textstyles.dart';
@@ -24,6 +26,7 @@ class _CaciCoinSectionState extends State<CaciCoinSection> {
   double tokenPriceInBNB = 0.0000001;
   double maxBNB = 1.0;
   final TextEditingController _bnbAmountController = TextEditingController();
+  String? _maxInputMessage;
 
   @override
   void dispose() {
@@ -39,7 +42,8 @@ class _CaciCoinSectionState extends State<CaciCoinSection> {
     });
   }
 
-  void updateBNBValue(String value) {
+  //ZAKLJUČA MU NA FLOOR TJ VREDNOSTI 1 BNB
+  /*void updateBNBValue(String value) {
     final parsed = int.tryParse(value) ?? 0;
     setState(() {
       tokenAmount = parsed;
@@ -47,6 +51,23 @@ class _CaciCoinSectionState extends State<CaciCoinSection> {
       if (bnbValue > maxBNB) {
         tokenAmount = (maxBNB / tokenPriceInBNB).floor();
         bnbValue = maxBNB;
+      }
+    });
+  }*/
+  void updateBNBValue(String value) {
+    final parsed = int.tryParse(value) ?? 0;
+    setState(() {
+      tokenAmount = parsed;
+      bnbValue = parsed * tokenPriceInBNB;
+      _maxInputMessage = null; // Resetujemo poruku pri svakoj promeni unosa
+      if (bnbValue > maxBNB) {
+        final maxTokens = (maxBNB / tokenPriceInBNB).floor();
+        _maxInputMessage = 'Najviše možete uneti: $maxTokens ĆaciCoin-a';
+        tokenAmount =
+            maxTokens; // Automatski postavljamo maksimalnu vrednost u state
+        bnbValue = maxBNB;
+        _bnbAmountController.text =
+            maxTokens.toString(); // Ažuriramo tekst u TextField-u
       }
     });
   }
@@ -94,6 +115,8 @@ class _CaciCoinSectionState extends State<CaciCoinSection> {
         ),
         SizedBox(height: 26),
         CrtTokenomicsMonitor(),
+        SizedBox(height: 26),
+        UgovoriButton(),
         SizedBox(height: 26),
 
         /// ✅ Ovde ubacujemo dugme
@@ -186,6 +209,8 @@ class _CaciCoinSectionState extends State<CaciCoinSection> {
           context: context,
         ),
         SizedBox(height: 20),
+        //
+        Text(AppStringsSrb.purchaseAttention, style: dekkoTextStyle),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 16.0),
           child: ElevatedButton(
@@ -197,7 +222,6 @@ class _CaciCoinSectionState extends State<CaciCoinSection> {
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 24),
             ),
             onPressed: () {
-              //TODO:IMPLEMENTIRAJ OTVARANJE UPUTSTVA
               showDialog(
                 context: context,
                 builder: (BuildContext context) => const CaciPopupCard(),

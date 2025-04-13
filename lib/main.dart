@@ -1,5 +1,6 @@
 import 'package:cacicoinsajt/pages/frontpage.dart';
 import 'package:cacicoinsajt/pages/nebudicaci.dart';
+import 'package:cacicoinsajt/pages/opiscacija.dart';
 import 'package:cacicoinsajt/utils/text/appstrings.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -32,6 +33,9 @@ class MainApp extends StatelessWidget {
         '/nebudicaci':
             (context) =>
                 const NebudiCaciScreen(), // Ruta za Ne Budi Ćaci stranicu
+        '/opiscacija':
+            (context) =>
+                const OpiscacijaScreen(), // Ruta za Ne Budi Ćaci stranicu
       },
     );
   }

@@ -25,19 +25,19 @@ class MobileDrawer extends StatelessWidget {
             child: Text('ĆaciLand Meni', style: dekkoTextStyle),
           ),
           ListTile(
-            title: Text('Twitter', style: dekkoTextStyle),
+            title: Text('X/Twitter', style: dekkoTextStyle),
             onTap: () {
-              _launchURL('https://twitter.com/tvoj_nalog');
+              _launchURL('https://x.com/CaciCoin');
             },
           ),
           ListTile(
             title: Text('Instagram', style: dekkoTextStyle),
             onTap: () {
-              _launchURL('https://instagram.com/tvoj_nalog');
+              _launchURL('https://www.instagram.com/cacicoin/');
             },
           ),
           ListTile(
-            title: Text('Telegram', style: dekkoTextStyle),
+            title: Text('Discord', style: dekkoTextStyle),
             onTap: () {
               _launchURL('https://t.me/tvoj_kanal');
             },
@@ -47,6 +47,13 @@ class MobileDrawer extends StatelessWidget {
             onTap: () {
               Navigator.pop(context); // zatvara drawer
               Navigator.pushNamed(context, '/cacicoin');
+            },
+          ),
+          ListTile(
+            title: Text('opis ćacija', style: dekkoTextStyle),
+            onTap: () {
+              Navigator.pop(context); // zatvara drawer
+              Navigator.pushNamed(context, '/opiscacija');
             },
           ),
           ListTile(

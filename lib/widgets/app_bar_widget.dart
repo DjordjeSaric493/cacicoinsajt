@@ -37,27 +37,29 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 children: [
                   //TODO: NALEPI X,INSTAGRAM I DISCORD!!
                   _buildNavItem(
-                    'Twitter',
-                    () => _launchURL('https://twitter.com/tvoj_nalog'),
+                    'X/Twitter',
+                    () => _launchURL('https://x.com/CaciCoin'),
                   ),
                   _buildNavItem(
                     'Instagram',
-                    () => _launchURL('https://instagram.com/tvoj_nalog'),
+                    () => _launchURL('https://www.instagram.com/cacicoin/'),
                   ),
                   _buildNavItem(
                     'Discord',
                     () => _launchURL('https://t.me/tvoj_kanal'),
                   ),
-                  _buildNavItem(
+                  _buildNavItemRed(
                     'ĆaciCoin',
                     () => Navigator.pushNamed(context, '/cacicoin'),
                   ),
-                  _buildNavItem(
+                  _buildNavItemRed(
                     'ne budi ćaci',
-                    () => Navigator.pushNamed(
-                      context,
-                      '/nebudicaci',
-                    ), //POGLEDAJ OVDE MI NIJE UVEZAO
+                    () => Navigator.pushNamed(context, '/nebudicaci'),
+                  ),
+                  _buildNavItemRed(
+                    //TODO: OPIS ĆACIJA PAGE
+                    'opis Ćacija',
+                    () => Navigator.pushNamed(context, '/opiscacija'),
                   ),
                 ],
               ),
@@ -67,6 +69,20 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   Widget _buildNavItem(String title, VoidCallback onPressed) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      child: TextButton(
+        onPressed: onPressed,
+        child: Text(
+          title,
+          style: dekkoTextStyle,
+          overflow: TextOverflow.ellipsis,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildNavItemRed(String title, VoidCallback onPressed) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: TextButton(

@@ -1,3 +1,5 @@
+import 'package:cacicoinsajt/widgets/button_bar_util%20widg/movingsandw.dart';
+import 'package:cacicoinsajt/widgets/button_bar_util%20widg/pumpajcacicoine.dart';
 import 'package:flutter/material.dart';
 import 'package:cacicoinsajt/utils/text/textstyles.dart';
 
@@ -12,7 +14,7 @@ class _PresalePumpWidgetState extends State<PresalePumpWidget> {
   final DateTime startDate = DateTime(
     2025,
     4,
-    12,
+    14,
   ); // Početni datum presale-a, menjaj za ui
   final int durationInDays = 30;
   bool isLoading = false;
@@ -36,7 +38,7 @@ class _PresalePumpWidgetState extends State<PresalePumpWidget> {
           height: 200,
         ),
         //TODO: nasminkaj bar
-        // 
+        //
         // PROGRESS BAR
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
@@ -56,6 +58,7 @@ class _PresalePumpWidgetState extends State<PresalePumpWidget> {
         const SizedBox(height: 20),
 
         // TODO: BUTTON KAD SMISLIMO
+        PumpajCaciButton(websiteUrl: "cacicoin.com"),
       ],
     );
   }
