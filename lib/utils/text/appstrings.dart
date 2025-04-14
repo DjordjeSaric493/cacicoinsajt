@@ -20,7 +20,7 @@ class AppStringsSrb {
   static const String descriptionButton = "opis Ćacija";
   static const String whoAreWe = "Ko smo mi?";
   static const String whoAreWeDescription =
-      "Mi smo tim koji stoji iza ĆaciCoin-a -inovativnog kripto projekta na internetu, edukativno-zabavnog karaktera!"
+      "Mi smo tim koji stoji iza ĆaciCoin-a -inovativnog kripto projekta na internetu, edukativno-zabavnog karaktera! "
       "ĆaciCoin je parodija na etiku ličnosti, ali sa ozbiljnom misijom - da ukaže na pogrešne vrednosti i pokrene etiku karaktera.\n\n"
       "Iako sve radimo sa osmehom, ne zaboravljamo ni one kojima je pomoć najpotrebnija zato će ĆaciCoin imati i humanitarnu crtu, jer smeh i dobrota idu ruku pod ruku!\n\n"
       "Pridruži se našoj zajednici i postani deo krypto revolucije u buđenju svesti, empatije i savesti kod ljudi!";
@@ -135,7 +135,7 @@ moglo se videti da slični obrasci etike ličnosti izlaze iz tih okvira i mogu s
 bez obzira na političke motive, Ćaciji su svuda oko nas. 
 Dobra vest je da su još uvek u manjini i da nije trajno stanje, moguće je vratiti ih na pravi put.
 
-Ćaci - osoba koja je kupila diplomu kod drugog ćacija na privatnom fakultetu  i misli da na taj način postaje ravnopravni član akademske zajednice. 
+Ćaci - osoba koja je kupila diplomu kod drugog ćacija na fakultetu i misli da na taj način postaje ravnopravni član akademske zajednice. 
 Nesvesna značaja obrazovanja u životu, Ćaci uglavnom misli da obrazovanje znači posedovati diplomu, a ne znanje.
 
 Ćaci - osoba koja redovno ume bestidno da slaže, i sutradan kada se ta laž otkrije, 

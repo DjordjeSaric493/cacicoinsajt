@@ -46,7 +46,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                   _buildNavItem(
                     'Discord',
-                    () => _launchURL('https://t.me/tvoj_kanal'),
+                    () => _launchURL('https://discord.gg/x56vRV8N'),
                   ),
                   _buildNavItemRed(
                     'ĆaciCoin',
