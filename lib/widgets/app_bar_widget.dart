@@ -37,7 +37,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 children: [
                   //TODO: NALEPI X,INSTAGRAM I DISCORD!!
                   _buildNavItem(
-                    'X/Twitter',
+                    'X',
                     () => _launchURL('https://x.com/CaciCoin'),
                   ),
                   _buildNavItem(
@@ -89,7 +89,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: onPressed,
         child: Text(
           title,
-          style: dekkoTextStyle,
+          style: dekkoTextStyleRed,
           overflow: TextOverflow.ellipsis,
         ),
       ),

@@ -14,6 +14,7 @@ final TextStyle dekkoTextStyle = GoogleFonts.dekko(
   color: Colors.black,
 );
 
+
 final TextStyle dekkoTextSmall = GoogleFonts.dekko(
   fontSize: 18,
   fontWeight: FontWeight.w400, // Regular težina
