@@ -22,7 +22,7 @@ class MobileDrawer extends StatelessWidget {
         children: [
           DrawerHeader(
             decoration: BoxDecoration(color: Color(0xFFD9D9D9)),
-            child: Text('ĆaciLand Meni', style: dekkoTextStyle),
+            child: Text('ĆaciLend Meni', style: dekkoTextStyle),
           ),
           ListTile(
             title: Text('X/Twitter', style: dekkoTextStyle),
@@ -50,7 +50,7 @@ class MobileDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text('opis ćacija', style: dekkoTextStyle),
+            title: Text('"Ćaci"', style: dekkoTextStyle),
             onTap: () {
               Navigator.pop(context); // zatvara drawer
               Navigator.pushNamed(context, '/opiscacija');

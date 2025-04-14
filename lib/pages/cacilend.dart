@@ -1,10 +1,11 @@
 import 'package:cacicoinsajt/utils/text/textstyles.dart';
+import 'package:cacicoinsajt/widgets/razbacanicaciji.dart';
 import 'package:flutter/material.dart';
 
-class ZidSramaText extends StatelessWidget {
+class Cacilend extends StatelessWidget {
   final bool isMobile;
 
-  const ZidSramaText({super.key, required this.isMobile});
+  const Cacilend({super.key, required this.isMobile});
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,7 @@ class ZidSramaText extends StatelessWidget {
           style: dekkoTextStyle,
           textAlign: TextAlign.center,
         ),
+        RazbacaneSlikeIzAssets(),
       ],
     );
   }

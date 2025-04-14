@@ -85,24 +85,6 @@ class _CaciCoinSectionState extends State<CaciCoinSection> {
         ),
         SizedBox(height: 14),
         Text(
-          'Pre-sale počinje SADA!',
-          style: deliciousTextStyleBigRed,
-          textAlign: TextAlign.center,
-        ),
-        SizedBox(height: 14),
-        Text(
-          'Po promotivnoj ceni samo tokom presale-a od:',
-          style: deliciousTextStyle,
-          textAlign: TextAlign.center,
-        ),
-        SizedBox(height: 14),
-        Text(
-          '0.0000001 BNB = 0.0069 RSD = 0.000063 USD',
-          style: dekkoTextStyleRed,
-          textAlign: TextAlign.center,
-        ),
-        SizedBox(height: 14),
-        Text(
           'Kupovina Ćacicoin-a',
           style: deliciousTextStyleBig,
           textAlign: TextAlign.center,
@@ -112,6 +94,25 @@ class _CaciCoinSectionState extends State<CaciCoinSection> {
           'Da biste kupili Ćacicoin, prvo povežite svoj e-wallet',
           style: deliciousTextStyle,
           textAlign: TextAlign.center,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16.0),
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.red,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 24),
+            ),
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) => const CaciPopupCard(),
+              );
+            },
+            child: Text('Uputstvo', style: dekkoTextSmallWhite),
+          ),
         ),
         SizedBox(height: 26),
         CrtTokenomicsMonitor(),
@@ -209,27 +210,6 @@ class _CaciCoinSectionState extends State<CaciCoinSection> {
           context: context,
         ),
         SizedBox(height: 20),
-        //
-        Text(AppStringsSrb.purchaseAttention, style: dekkoTextStyle),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 16.0),
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.red,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 24),
-            ),
-            onPressed: () {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) => const CaciPopupCard(),
-              );
-            },
-            child: Text('Uputstvo', style: dekkoTextSmallWhite),
-          ),
-        ),
       ],
     );
   }

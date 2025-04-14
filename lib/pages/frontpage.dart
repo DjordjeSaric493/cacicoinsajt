@@ -1,9 +1,10 @@
 import 'package:cacicoinsajt/utils/text/textstyles.dart';
 import 'package:cacicoinsajt/widgets/button_bar_util%20widg/dodajcacijabutt.dart';
+import 'package:cacicoinsajt/widgets/button_bar_util%20widg/fencebutt.dart';
 import 'package:cacicoinsajt/widgets/entercacilend.dart';
 import 'package:cacicoinsajt/widgets/button_bar_util%20widg/pump_bar.dart';
 import 'package:cacicoinsajt/widgets/razbacanicaciji.dart';
-import 'package:cacicoinsajt/widgets/zidsramatekst.dart';
+import 'package:cacicoinsajt/pages/cacilend.dart';
 import 'package:flutter/material.dart';
 import 'package:cacicoinsajt/widgets/app_bar_widget.dart';
 import 'package:cacicoinsajt/widgets/button_bar_util%20widg/mobile_drawer_widget.dart';
@@ -43,7 +44,7 @@ class _FrontPageState extends State<FrontPage> {
     final isMobile = MediaQuery.of(context).size.width < 768;
     final appBarWidth =
         isMobile
-            ? MediaQuery.of(context).size.width * 0.90
+            ? MediaQuery.of(context).size.width * 0.95
             : MediaQuery.of(context).size.width * 0.7;
 
     return Scaffold(
@@ -94,14 +95,14 @@ class _FrontPageState extends State<FrontPage> {
                               ),
                               const SizedBox(height: 20),
                               PresalePumpWidget(),
-                              const SizedBox(height: 20),
 
+                              /*kad dodje vreme
                               UdjiUCacilend(
                                 isMobile: isMobile,
                                 appBarWidth: appBarWidth,
-                              ),
+                              ),*/
                               const SizedBox(height: 30),
-                              ZidSramaText(isMobile: isMobile),
+                              //ZidSramaText(isMobile: isMobile),
                               const SizedBox(height: 40),
                               Text(
                                 'Dodaj svog Ćacija!!!',
@@ -113,9 +114,16 @@ class _FrontPageState extends State<FrontPage> {
                                 onPressed: () {},
                               ),
                               const SizedBox(height: 40),
+                              FenceButton(
+                                buttonText: 'Idi na sledeću stranicu',
+                                nextPage: Cacilend(
+                                  isMobile: isMobile,
+                                ), // Vaša widget klasa za sledeću stranicu
+                                fenceImagePath:
+                                    'assets/ograda.png', // Putanja do slike ograde
+                              ),
 
-                              //TODO:IMPORTUJ MI WIDGET OVDE!
-                              RazbacaneSlikeIzAssets(),
+                              //TODO:IMPORTUJ DUGME  OVDE!
                             ],
                           ),
                         ),

@@ -9,11 +9,10 @@ final TextStyle deliciousTextStyle = GoogleFonts.deliciousHandrawn(
 );
 
 final TextStyle dekkoTextStyle = GoogleFonts.dekko(
-  fontSize: 36,
+  fontSize: 30,
   fontWeight: FontWeight.w400, // Regular težina
   color: Colors.black,
 );
-
 
 final TextStyle dekkoTextSmall = GoogleFonts.dekko(
   fontSize: 18,
@@ -26,12 +25,12 @@ final TextStyle dekkoTextSmallWhite = GoogleFonts.dekko(
   color: Colors.white,
 );
 final TextStyle dekkoTextStyleWhite = GoogleFonts.dekko(
-  fontSize: 36,
+  fontSize: 32,
   fontWeight: FontWeight.w400, // Regular težina
   color: Colors.white,
 );
 final TextStyle dekkoTextStyleRed = GoogleFonts.dekko(
-  fontSize: 36,
+  fontSize: 30,
   fontWeight: FontWeight.w400, // Regular težina
   color: Colors.red,
 );
@@ -47,7 +46,7 @@ final TextStyle deliciousTextStyleBigRed = GoogleFonts.deliciousHandrawn(
   color: const Color.fromARGB(255, 240, 24, 24),
 );
 final TextStyle deliciousTextStyleRed = GoogleFonts.deliciousHandrawn(
-  fontSize: 36,
+  fontSize: 30,
   fontWeight: FontWeight.w400, // Regular težina
   color: const Color.fromARGB(255, 240, 24, 24),
 );

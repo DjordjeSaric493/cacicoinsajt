@@ -58,7 +58,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                   _buildNavItemRed(
                     //TODO: OPIS ĆACIJA PAGE
-                    'opis Ćacija',
+                    '"Ćaci"',
                     () => Navigator.pushNamed(context, '/opiscacija'),
                   ),
                 ],

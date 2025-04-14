@@ -209,7 +209,7 @@ class _DescriptionSectionState extends State<DescriptionSection> {
                                             child: Text(
                                               OpisCacijaSrb.opis,
                                               style: GoogleFonts.dekko(
-                                                fontSize: 16,
+                                                fontSize: 20,
                                               ),
                                               textAlign: TextAlign.start,
                                             ),
