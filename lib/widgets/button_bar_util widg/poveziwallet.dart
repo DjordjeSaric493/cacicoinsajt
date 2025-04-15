@@ -1,12 +1,20 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:js/js.dart' as js;
 import 'package:js/js_util.dart' as js_util;
+import 'package:url_launcher/url_launcher.dart'; // Dodajte ovaj import
 
 @js.JS('window.checkWeb3Provider')
 external dynamic checkWeb3ProviderJs();
 
 @js.JS('window.requestAccount')
 external dynamic requestAccountJs();
+
+@js.JS('window.localStorage.setItem')
+external void localStorageSetItem(String key, String value);
+
+@js.JS('window.localStorage.getItem')
+external String? localStorageGetItem(String key);
 
 class ConnectWalletButton extends StatefulWidget {
   final Function(String) onConnected;
@@ -35,44 +43,108 @@ class _ConnectWalletButtonState extends State<ConnectWalletButton> {
   bool isConnected = false;
   String address = '';
 
-  Future<void> connectWallet() async {
-    try {
-      final isProviderAvailable = await js_util.promiseToFuture(
-        checkWeb3ProviderJs(),
-      );
-
-      if (!isProviderAvailable) {
-        throw Exception("MetaMask nije pronađen");
-      }
-
-      final account = await js_util.promiseToFuture(requestAccountJs());
+  @override
+  void initState() {
+    super.initState();
+    // Proveri da li postoji sačuvana adresa prilikom inicijalizacije widgeta
+    final storedAddress = localStorageGetItem('walletAddress');
+    if (storedAddress != null && storedAddress.isNotEmpty) {
       setState(() {
         isConnected = true;
-        address = account.toString();
+        address = storedAddress;
       });
-
       widget.onConnected(address);
+    }
+  }
 
-      if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text("Povezan uspešno 🎉"),
-            duration: Duration(seconds: 2),
-            behavior: SnackBarBehavior.floating,
-            backgroundColor: Colors.green,
-          ),
-        );
-      }
-    } catch (e) {
-      if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text("Greška: ${e.toString()}"),
-            duration: const Duration(seconds: 3),
-            behavior: SnackBarBehavior.floating,
-            backgroundColor: Colors.red,
-          ),
-        );
+  Future<void> connectWallet() async {
+    if (kIsWeb) {
+      if (defaultTargetPlatform == TargetPlatform.android ||
+          defaultTargetPlatform == TargetPlatform.iOS) {
+        final metamaskAppUrl = Uri.parse('https://metamask.app/');
+        if (await canLaunchUrl(metamaskAppUrl)) {
+          await launchUrl(metamaskAppUrl);
+          if (context.mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text("Otvaranje MetaMask aplikacije..."),
+                duration: Duration(seconds: 3),
+                behavior: SnackBarBehavior.floating,
+              ),
+            );
+          }
+          // Ne postavljamo isConnected na true ovde odmah, jer se korisnik tek prebacuje na MetaMask.
+          // Stanje će se potencijalno ponovo proveriti kada se korisnik vrati.
+        } else {
+          // MetaMask aplikacija nije instalirana, preusmeri na prodavnicu
+          String appStoreUrl = '';
+          if (defaultTargetPlatform == TargetPlatform.android) {
+            appStoreUrl =
+                'https://play.google.com/store/apps/details?id=io.metamask';
+          } else if (defaultTargetPlatform == TargetPlatform.iOS) {
+            appStoreUrl = 'https://apps.apple.com/app/metamask/id1438183784';
+          }
+          final appStoreUri = Uri.parse(appStoreUrl);
+          if (await canLaunchUrl(appStoreUri)) {
+            await launchUrl(appStoreUri);
+            if (context.mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text(
+                    "Preusmeravanje na prodavnicu za preuzimanje MetaMask-a.",
+                  ),
+                  duration: Duration(seconds: 5),
+                  behavior: SnackBarBehavior.floating,
+                ),
+              );
+            }
+          } else {
+            if (context.mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text("Ne mogu da otvorim prodavnicu aplikacija."),
+                  duration: Duration(seconds: 3),
+                  behavior: SnackBarBehavior.floating,
+                  backgroundColor: Colors.red,
+                ),
+              );
+            }
+          }
+        }
+      } else {
+        try {
+          final isProviderAvailable = await js_util.promiseToFuture(
+            checkWeb3ProviderJs(),
+          );
+
+          if (!isProviderAvailable) {
+            throw Exception("MetaMask nije pronađen");
+          }
+
+          final account = await js_util.promiseToFuture(requestAccountJs());
+          setState(() {
+            isConnected = true;
+            address = account.toString();
+          });
+          widget.onConnected(address);
+          localStorageSetItem(
+            'walletAddress',
+            address,
+          ); // Sačuvaj adresu u Local Storage
+
+          if (context.mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text("Povezan uspešno 🎉"),
+                duration: Duration(seconds: 2),
+                behavior: SnackBarBehavior.floating,
+                backgroundColor: Colors.green,
+              ),
+            );
+          }
+        } catch (e) {
+          // ... (obrada greške) ...
+        }
       }
     }
   }

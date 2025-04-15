@@ -15,7 +15,6 @@ class BuyButton extends StatelessWidget {
   final double bnbValue;
   final VoidCallback onStart;
   final VoidCallback onFinish;
-  //final Function(String) onLog;
   final BuildContext context;
 
   const BuyButton({
@@ -25,7 +24,6 @@ class BuyButton extends StatelessWidget {
     required this.bnbValue,
     required this.onStart,
     required this.onFinish,
-    //required this.onLog,
     required this.context,
   });
 
@@ -33,28 +31,42 @@ class BuyButton extends StatelessWidget {
     if (!isConnected || bnbValue <= 0) return;
 
     onStart();
-    // onLog("Pokretanje kupovine...");
 
     try {
       final isCorrectNetwork = await js_util.promiseToFuture(checkNetworkJs());
-      // onLog("Provera mreže: $isCorrectNetwork");
 
       if (!isCorrectNetwork) {
         throw Exception("Prebacite se na Binance Smart Chain");
       }
 
       final safeBNB = double.parse(bnbValue.toStringAsFixed(18));
-      final txHash = await js_util.promiseToFuture(
+      final txResult = await js_util.promiseToFuture(
         sendTransactionJs(safeBNB.toString()),
       );
 
-      //  onLog("Transakcija poslata: $txHash");
-
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("✅ Transakcija poslata!\nTX hash: $txHash")),
-      );
+      if (txResult == 'mobile_transaction_initiated') {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text(
+              "✅ Otvara se MetaMask aplikacija. Molimo vas da potvrdite kupovinu.",
+            ),
+            duration: Duration(seconds: 5),
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+      } else if (txResult != null &&
+          txResult != 'mobile_transaction_initiated') {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("✅ Transakcija poslata!\nTX hash: $txResult")),
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text("❌ Transakcija nije poslata ili je otkazana."),
+          ),
+        );
+      }
     } catch (e) {
-      // onLog("Greška: ${e.toString()}");
       ScaffoldMessenger.of(
         context,
       ).showSnackBar(SnackBar(content: Text("❌ Greška: ${e.toString()}")));
@@ -66,10 +78,7 @@ class BuyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        //padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
-        textStyle: const TextStyle(fontSize: 25), // Veći tekst
-      ),
+      style: ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 25)),
       onPressed: isConnected && !isLoading ? buyTokens : null,
       child:
           isLoading

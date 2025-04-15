@@ -1,4 +1,3 @@
-// web3_utils.js
 async function checkWeb3Provider() {
   if (typeof window.ethereum !== 'undefined') {
     return true;
@@ -7,7 +6,7 @@ async function checkWeb3Provider() {
     return false;
   }
 }
-//OVO NAM JE PRAVILO PROBLEME
+
 async function loadContract() {
   const response = await fetch('assets/abi.json');
   const abi = await response.json();
@@ -40,66 +39,36 @@ async function checkNetwork() {
   return false;
 }
 
-//Hvala Tamara (gleda adresu, učitava ABI, pasira amount, vraća hash transakc)
 async function sendTransaction(bnbAmount) {
   try {
     if (!window.ethereum.selectedAddress) {
       await requestAccount();
     }
 
-    const contract = await loadContract(); // koristi tvoj `loadContract` koji si već napisala  
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    const contractAddress = '0x63539CF43cE777c6DfAdBE484De53246cE7eF134'; //MOJ UGOVOR?
 
-    const tx = await contract.buyTokens({
-      value: ethers.utils.parseEther(bnbAmount.toString())
-    });
-
-    return tx.hash;
+    if (isMobile) {
+      const amountToSendWei = ethers.utils.parseEther(bnbAmount.toString()).toHexString();
+      const deepLink = `https://metamask.app/send?to=${contractAddress}&value=${amountToSendWei}`;
+      window.location.href = deepLink;
+      alert('MetaMask aplikacija se otvara. Molimo vas da potvrdite kupovinu.');
+      return 'mobile_transaction_initiated';
+    } else {
+      const contract = await loadContract();
+      const tx = await contract.buyTokens({
+        value: ethers.utils.parseEther(bnbAmount.toString())
+      });
+      return tx.hash;
+    }
   } catch (error) {
     console.error("Greška pri pozivu funkcije buyTokens:", error);
     throw error;
   }
 }
 
-
 // Expose functions to window
 window.checkWeb3Provider = checkWeb3Provider;
 window.requestAccount = requestAccount;
 window.checkNetwork = checkNetwork;
 window.sendTransaction = sendTransaction;
-
-
-
-
-/* ZBOG OVOGA SAM  PSIHIČKI LABILNIJI NEGO INAČE 
-async function sendTransaction(bnbAmount) {
-  try {
-    // Check if connected to MetaMask
-    if (!window.ethereum.selectedAddress) {
-      await requestAccount();
-    }
-
-    // Convert BNB amount to wei (1 BNB = 10^18 wei)
-    const weiAmount = ethers.utils.parseEther(bnbAmount.toString()).toHexString();
-
-    const transactionParameters = {
-      to: '0x757be8f26d34b3e2b5aa79afb728c26e6e2770ee', // Your contract address
-      from: window.ethereum.selectedAddress,
-      value: weiAmount,
-      // You can add gas parameters if needed
-      // gas: '0x5208', // 21000 wei
-      // gasPrice: '0x3b9aca00' // 1 gwei
-    };
-
-    // Send the transaction
-    const txHash = await window.ethereum.request({
-      method: 'eth_sendTransaction',
-      params: [transactionParameters],
-    });*
-
-    return txHash;
-  } *
-    catch (error) {
-    console.error("Greška prilikom slanja transakcije:", error);
-    throw error;
-  }
-}*/
