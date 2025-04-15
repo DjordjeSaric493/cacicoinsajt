@@ -1,4 +1,5 @@
 import 'package:cacicoinsajt/utils/text/textstyles.dart';
+import 'package:cacicoinsajt/widgets/button_bar_util%20widg/dodajcacijabutt.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 import 'dart:html' as html;
@@ -57,6 +58,10 @@ class Cacilend extends StatelessWidget {
                   style: dekkoTextStyle.copyWith(fontSize: isMobile ? 20 : 28),
                   textAlign: TextAlign.justify,
                 ),
+                const SizedBox(height: 20),
+                Text('Dodaj svog Ćacija!!!', style: dekkoTextStyle),
+                const SizedBox(height: 40),
+                PixelArtButton(isMobile: isMobile, onPressed: () {}),
                 const SizedBox(height: 40),
                 ConstrainedBox(
                   constraints: BoxConstraints(maxWidth: appBarWidth),

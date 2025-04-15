@@ -35,12 +35,15 @@ class OpiscacijaScreen extends StatelessWidget {
                 //const SizedBox(height: 7),
                 Text(
                   OpisCacijaSrb.opis,
-                  style: dekkoTextStyle.copyWith(fontSize: 34),
+                  style: dekkoTextStyle.copyWith(
+                    fontSize:
+                        isMobile
+                            ? 20
+                            : 30, // Ternarni operator za veličinu fonta
+                  ),
                   textAlign: TextAlign.justify,
                 ),
-                const SizedBox(
-                  height: 30,
-                ), //OSTALO BRIŠI, DASMI OSTANU SAMO TEKST I APPBAR I DRAWER
+                const SizedBox(height: 30),
               ],
             ),
           ),

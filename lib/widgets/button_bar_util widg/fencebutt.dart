@@ -45,9 +45,9 @@ class _FenceButtonState extends State<FenceButton> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final originalFenceHeight = 100.0;
+    final originalFenceHeight = 120.0;
     final fenceHeight = originalFenceHeight * 1.3;
-    final fenceWidth = _buttonWidth * 1.2;
+    final fenceWidth = _buttonWidth * 1.4;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
