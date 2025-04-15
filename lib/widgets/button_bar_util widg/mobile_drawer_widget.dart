@@ -24,29 +24,19 @@ class MobileDrawer extends StatelessWidget {
             decoration: BoxDecoration(color: Color(0xFFD9D9D9)),
             child: Text('ĆaciLend Meni', style: dekkoTextStyle),
           ),
-          ListTile(
-            title: Text('X/Twitter', style: dekkoTextStyle),
-            onTap: () {
-              _launchURL('https://x.com/CaciCoin');
-            },
-          ),
-          ListTile(
-            title: Text('Instagram', style: dekkoTextStyle),
-            onTap: () {
-              _launchURL('https://www.instagram.com/cacicoin/');
-            },
-          ),
-          ListTile(
-            title: Text('Discord', style: dekkoTextStyle),
-            onTap: () {
-              _launchURL('https://discord.gg/x56vRV8N');
-            },
-          ),
+
           ListTile(
             title: Text('ĆaciCoin', style: dekkoTextStyle),
             onTap: () {
               Navigator.pop(context); // zatvara drawer
               Navigator.pushNamed(context, '/cacicoin');
+            },
+          ),
+          ListTile(
+            title: Text('ČACILEND', style: dekkoTextStyle),
+            onTap: () {
+              Navigator.pop(context); // zatvara drawer
+              Navigator.pushNamed(context, '/cacilend');
             },
           ),
           ListTile(

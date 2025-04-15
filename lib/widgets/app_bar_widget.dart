@@ -18,7 +18,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         ? AppBar(
           backgroundColor: const Color(0xFFD9D9D9),
           elevation: 0,
-          title: const Text('ĆaciLand Meni'),
+          title: Text('ĆaciLend Meni', style: dekkoTextStyleWhite),
         )
         : PreferredSize(
           preferredSize: const Size.fromHeight(60),
@@ -36,18 +36,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   //TODO: NALEPI X,INSTAGRAM I DISCORD!!
-                  _buildNavItem(
-                    'X',
-                    () => _launchURL('https://x.com/CaciCoin'),
-                  ),
-                  _buildNavItem(
-                    'Instagram',
-                    () => _launchURL('https://www.instagram.com/cacicoin/'),
-                  ),
-                  _buildNavItem(
-                    'Discord',
-                    () => _launchURL('https://discord.gg/x56vRV8N'),
-                  ),
                   _buildNavItemRed(
                     'ĆaciCoin',
                     () => Navigator.pushNamed(context, '/cacicoin'),
@@ -55,6 +43,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   _buildNavItemRed(
                     'ne budi ćaci',
                     () => Navigator.pushNamed(context, '/nebudicaci'),
+                  ),
+                  _buildNavItemRed(
+                    'ĆACILEND',
+                    () => Navigator.pushNamed(context, '/cacilend'),
                   ),
                   _buildNavItemRed(
                     //TODO: OPIS ĆACIJA PAGE

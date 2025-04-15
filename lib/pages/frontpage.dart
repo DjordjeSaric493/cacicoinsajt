@@ -56,24 +56,30 @@ class _FrontPageState extends State<FrontPage> {
           children: [
             Stack(
               children: [
-                Positioned(
-                  left: 0,
-                  top: 250,
-                  bottom: 0,
-                  child: Image.asset(
-                    'assets/caciusk2.png',
-                    width: isMobile ? 140 : 200,
-                    height: isMobile ? 140 : 200,
+                Visibility(
+                  visible: !isMobile,
+                  child: Positioned(
+                    left: 0,
+                    top: 250,
+                    bottom: 0,
+                    child: Image.asset(
+                      'assets/caciusk2.png',
+                      width: isMobile ? 140 : 200,
+                      height: isMobile ? 140 : 200,
+                    ),
                   ),
                 ),
-                Positioned(
-                  right: 0,
-                  top: 0,
-                  bottom: 0,
-                  child: Image.asset(
-                    'assets/caciusk2.png',
-                    width: isMobile ? 140 : 200,
-                    height: isMobile ? 140 : 200,
+                Visibility(
+                  visible: !isMobile,
+                  child: Positioned(
+                    right: 0,
+                    top: 0,
+                    bottom: 0,
+                    child: Image.asset(
+                      'assets/caciusk2.png',
+                      width: isMobile ? 140 : 200,
+                      height: isMobile ? 140 : 200,
+                    ),
                   ),
                 ),
                 Column(
@@ -96,13 +102,8 @@ class _FrontPageState extends State<FrontPage> {
                               const SizedBox(height: 20),
                               PresalePumpWidget(),
 
-                              /*kad dodje vreme
-                              UdjiUCacilend(
-                                isMobile: isMobile,
-                                appBarWidth: appBarWidth,
-                              ),*/
                               const SizedBox(height: 30),
-                              //ZidSramaText(isMobile: isMobile),
+
                               const SizedBox(height: 40),
                               Text(
                                 'Dodaj svog Ćacija!!!',
@@ -115,10 +116,7 @@ class _FrontPageState extends State<FrontPage> {
                               ),
                               const SizedBox(height: 40),
                               FenceButton(
-                                buttonText: 'Idi na sledeću stranicu',
-                                nextPage: Cacilend(
-                                  isMobile: isMobile,
-                                ), // Vaša widget klasa za sledeću stranicu
+                                buttonText: 'Uđi u ĆACILEND',
                                 fenceImagePath:
                                     'assets/ograda.png', // Putanja do slike ograde
                               ),

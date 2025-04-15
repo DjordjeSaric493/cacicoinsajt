@@ -22,7 +22,7 @@ class AppStringsSrb {
   static const String whoAreWeDescription =
       "Mi smo tim koji stoji iza ĆaciCoin-a -inovativnog kripto projekta na internetu, edukativno-zabavnog karaktera! "
       "ĆaciCoin je parodija na etiku ličnosti, ali sa ozbiljnom misijom - da ukaže na pogrešne vrednosti i pokrene etiku karaktera.\n\n"
-      "Iako sve radimo sa osmehom, ne zaboravljamo ni one kojima je pomoć najpotrebnija zato će ĆaciCoin imati i humanitarnu crtu, jer smeh i dobrota idu ruku pod ruku!\n\n"
+      "Iako sve radimo sa osmehom, ne zaboravljamo ni one kojima je pomoć najpotrebnija, zato će ĆaciCoin imati i humanitarnu crtu, jer smeh i dobrota idu ruku pod ruku!\n\n"
       "Pridruži se našoj zajednici i postani deo krypto revolucije u buđenju svesti, empatije i savesti kod ljudi!";
   static const String phenomenon = "FENOMEN";
   static const String caci = "ĆACI";
@@ -108,38 +108,28 @@ class OpisCacijaSrb {
   static const String opis = """
 
 
-U Srbiji, 1. novembra 2024. godine, na železničkoj stanici u Novom Sadu došlo je do stravične tragedije kada se obrušila nadstrešnica ispred 
-ulaza i usmrtila 16-oro ljudi, nakon samo 3 meseca od završene  rekonstrukcije i svečanog otvaranja stanice.
+U Srbiji, 1. novembra 2024. godine, na železničkoj stanici u Novom Sadu došlo je do stravične tragedije kada se obrušila nadstrešnica ispred ulaza i usmrtila 16-oro ljudi, nakon samo 3 meseca od završene  rekonstrukcije i svečanog otvaranja stanice.
 
-Studenti iz cele Srbije su kao uzrok te tragedije prepoznali nemar, nestručnost i korupciju  
-i odlučili da ,jedinstveni i solidarni, blokiraju rad svih fakulteta na sva četiri državna univerziteta, 
-postavljajući zahteve čijim ispunjenjem bi bila zadovoljena pravda, krivci bi odgovarali, 
-a institucije bi se oslobodile od nepravde i korumpiranosti.
+Studenti iz cele Srbije su kao uzrok te tragedije prepoznali nemar, nestručnost i korupciju  i odlučili da ,jedinstveni i solidarni, blokiraju rad svih fakulteta na sva četiri državna univerziteta, 
+postavljajući zahteve čijim ispunjenjem bi bila zadovoljena pravda, krivci bi odgovarali, a institucije bi se oslobodile od nepravde i korumpiranosti.
 
-Započeli su svakodnevne masovne proteste i okupljanja i vrlo brzo dobili podršku od većine građana 
-gotovo u svim mestima u državi. Masovno su počele, po ugledu na studente, i blokade srednjih škola u državi. 
-Učenici su svakog dana izlazili ispred škole u vreme nastave i podržavali studentske zahteve, 
-odbijajući da prisustvuju nastavi.
+Započeli su svakodnevne masovne proteste i okupljanja i vrlo brzo dobili podršku od većine građana gotovo u svim mestima u državi. Masovno su počele, po ugledu na studente, i blokade srednjih škola u državi. 
+Učenici su svakog dana izlazili ispred škole u vreme nastave i podržavali studentske zahteve, odbijajući da prisustvuju nastavi.
 
 Deo građana koji su predstavljali biračko telo vlasti u Srbiji, nisu se slagali sa protestima koje je započela akademska zajednica. 
-Ispred jedne škole, preko noći, osvanuo je grafit "Ćaci u školu". 
-Pristalica vlasti je želeo da napiše "Đaci u školu", ali očigledno nepismen, đake (đaci) je nazvao "ćaci".
+Ispred jedne škole, preko noći, osvanuo je grafit "Ćaci u školu".  Pristalica vlasti je želeo da napiše "Đaci u školu", ali očigledno nepismen, đake (đaci) je nazvao "ćaci".
 
 Ta reč je postala od tog trenutka sinonim za ljude koji podržavaju vlast. 
-Vremenom, analiziranjem ljudi u vlasti i njihovog biračkog tela u toku turbulentne društvene situacije, 
-kompletna Srbija je otkrila poražavajuće osobine kod tih ljudi i formirana je realna slika o njima 
+Vremenom, analiziranjem ljudi u vlasti i njihovog biračkog tela u toku turbulentne društvene situacije,  kompletna Srbija je otkrila poražavajuće osobine kod tih ljudi i formirana je realna slika o njima 
 kao jednoj društvenoj pošasti koja dezintegriše državu, urušava institucije i gazi elementarne ljudske vrednosti i principe. 
 Novonastala reč Ćaci je dobila mnogo šire značenje od običnog nepismenog čoveka koji je sve to započeo. 
-Ono što je interesantno, nakon inicijalne definicije pojma Ćaci kao sinonima trenutne vlasti i njenih pristalica, 
-moglo se videti da slični obrasci etike ličnosti izlaze iz tih okvira i mogu se prepoznati na svakom koraku i u celom društvu, 
-bez obzira na političke motive, Ćaciji su svuda oko nas. 
-Dobra vest je da su još uvek u manjini i da nije trajno stanje, moguće je vratiti ih na pravi put.
+Ono što je interesantno, nakon inicijalne definicije pojma Ćaci kao sinonima trenutne vlasti i njenih pristalica,  moglo se videti da slični obrasci etike ličnosti izlaze iz tih okvira i mogu se prepoznati na svakom koraku i u celom društvu, 
+bez obzira na političke motive, Ćaciji su svuda oko nas. Dobra vest je da su još uvek u manjini i da nije trajno stanje, moguće je vratiti ih na pravi put.
 
 Ćaci - osoba koja je kupila diplomu kod drugog ćacija na fakultetu i misli da na taj način postaje ravnopravni član akademske zajednice. 
 Nesvesna značaja obrazovanja u životu, Ćaci uglavnom misli da obrazovanje znači posedovati diplomu, a ne znanje.
 
-Ćaci - osoba koja redovno ume bestidno da slaže, i sutradan kada se ta laž otkrije, 
-on poriče da je to izgovorio, iako postoje hiljadu snimaka te njegove izjave, pokušava da zameni tezu, 
+Ćaci - osoba koja redovno ume bestidno da slaže, i sutradan kada se ta laž otkrije, on poriče da je to izgovorio, iako postoje hiljadu snimaka te njegove izjave, pokušava da zameni tezu, 
 agresivno napada sve uključene i besramno njih optužuje za laž, bez obzira na evidentne dokaze.
 
 Ćaci nije određen godinama starosti. Postoje i tinejdžeri, i sredovečni, i matori ćaciji. 
@@ -148,12 +138,10 @@ agresivno napada sve uključene i besramno njih optužuje za laž, bez obzira na
 Po svemu sudeći, najbolje se osećaju u grupi sa drugim ćacijima i te grupe sa 10+ ćacija nazivamo Ćacilend. 
 Ćacilenda ima na svim nivoima društva, u svim organizacijama, ustanovama i institucijama, po čitavom svetu.
 
-Najopasniji je ambiciozni Ćaci, jer poseduje značajne količine lukavstva, 
-koje mu može obezbediti dugo čuvanje te tajne i na taj način godinama je u stanju obmanjivati društvo u kome živi. 
+Najopasniji je ambiciozni Ćaci, jer poseduje značajne količine lukavstva, koje mu može obezbediti dugo čuvanje te tajne i na taj način godinama je u stanju obmanjivati društvo u kome živi. 
 Pod određenim društveno-ekonomskim okolnostima može se vinuti do najviših funkcija pokušavajući da od čitavih država i nacija napravi Ćacilend.
 
-Međutim, ni najambiciozniji, ni najpametniji Ćaci ne poseduje emocionalnu zrelost, 
-i zbog neodoljive potrebe za samoljubljem i koristoljubljem, kroz istoriju gledano, 
+Međutim, ni najambiciozniji, ni najpametniji Ćaci ne poseduje emocionalnu zrelost, i zbog neodoljive potrebe za samoljubljem i koristoljubljem, kroz istoriju gledano, 
 uvek na kraju završi kao gubitnik i bude prepoznat kao SIMBOL BEZ SUŠTINE.
 """;
 }

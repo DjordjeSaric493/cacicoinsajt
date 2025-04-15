@@ -1,3 +1,4 @@
+import 'package:cacicoinsajt/widgets/button_bar_util%20widg/socialbutt.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cacicoinsajt/utils/text/appstrings.dart';
@@ -57,83 +58,7 @@ class _DescriptionSectionState extends State<DescriptionSection> {
                     const SizedBox(height: 16),
                     ElevatedButton(
                       onPressed: () {
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return Dialog(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              child: Builder(
-                                builder: (context) {
-                                  return Container(
-                                    width:
-                                        MediaQuery.of(context).size.width * 0.8,
-                                    height:
-                                        MediaQuery.of(context).size.height *
-                                        0.7,
-                                    padding: EdgeInsets.all(16),
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(12),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black26,
-                                          blurRadius: 8,
-                                        ),
-                                      ],
-                                    ),
-                                    child: Column(
-                                      children: [
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            IconButton(
-                                              icon: Icon(Icons.close),
-                                              onPressed: () {
-                                                Navigator.of(context).pop();
-                                              },
-                                            ),
-                                          ],
-                                        ),
-                                        Expanded(
-                                          child: SingleChildScrollView(
-                                            controller: _scrollController,
-                                            child: Text(
-                                              OpisCacijaSrb.opis,
-                                              style: GoogleFonts.dekko(
-                                                fontSize: 50,
-                                              ),
-                                              textAlign: TextAlign.start,
-                                            ),
-                                          ),
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Text('Auto-scroll:'),
-                                            Switch(
-                                              value: _autoScroll,
-                                              onChanged: (value) {
-                                                setState(() {
-                                                  _autoScroll = value;
-                                                  if (_autoScroll)
-                                                    _startAutoScroll();
-                                                });
-                                              },
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  );
-                                },
-                              ),
-                            );
-                          },
-                        );
+                        Navigator.pushNamed(context, '/opiscacija');
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.red,
@@ -159,87 +84,12 @@ class _DescriptionSectionState extends State<DescriptionSection> {
                     Text(
                       AppStringsSrb.readDescription,
                       style: GoogleFonts.dekko(color: Colors.red, fontSize: 40),
+                      textAlign: TextAlign.justify,
                     ),
                     const SizedBox(width: 16),
                     ElevatedButton(
                       onPressed: () {
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return Dialog(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              child: Builder(
-                                builder: (context) {
-                                  return Container(
-                                    width:
-                                        MediaQuery.of(context).size.width * 0.8,
-                                    height:
-                                        MediaQuery.of(context).size.height *
-                                        0.7,
-                                    padding: EdgeInsets.all(16),
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(12),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black26,
-                                          blurRadius: 8,
-                                        ),
-                                      ],
-                                    ),
-                                    child: Column(
-                                      children: [
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            IconButton(
-                                              icon: Icon(Icons.close),
-                                              onPressed: () {
-                                                Navigator.of(context).pop();
-                                              },
-                                            ),
-                                          ],
-                                        ),
-                                        Expanded(
-                                          child: SingleChildScrollView(
-                                            controller: _scrollController,
-                                            child: Text(
-                                              OpisCacijaSrb.opis,
-                                              style: GoogleFonts.dekko(
-                                                fontSize: 20,
-                                              ),
-                                              textAlign: TextAlign.start,
-                                            ),
-                                          ),
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Text('Auto-scroll:'),
-                                            Switch(
-                                              value: _autoScroll,
-                                              onChanged: (value) {
-                                                setState(() {
-                                                  _autoScroll = value;
-                                                  if (_autoScroll)
-                                                    _startAutoScroll();
-                                                });
-                                              },
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  );
-                                },
-                              ),
-                            );
-                          },
-                        );
+                        Navigator.pushNamed(context, '/opiscacija');
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.red,
@@ -263,7 +113,7 @@ class _DescriptionSectionState extends State<DescriptionSection> {
                 child: Text(
                   AppStringsSrb.whoAreWe,
                   style: deliciousTextStyleBig,
-                  textAlign: TextAlign.start,
+                  textAlign: TextAlign.justify,
                 ),
               ),
               const SizedBox(height: 20),
@@ -271,9 +121,13 @@ class _DescriptionSectionState extends State<DescriptionSection> {
                 child: Text(
                   AppStringsSrb.whoAreWeDescription,
                   style: dekkoTextStyle,
-                  textAlign: TextAlign.center,
+                  textAlign: TextAlign.justify,
                 ),
               ),
+              const SizedBox(height: 15),
+              SocialMediaButton(
+                isMobile: widget.isMobile,
+              ), //widget.isMobile da prati iz parent-a dal je mobilno
             ],
           ),
         ),

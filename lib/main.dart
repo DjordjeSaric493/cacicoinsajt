@@ -1,3 +1,4 @@
+import 'package:cacicoinsajt/pages/cacilend.dart';
 import 'package:cacicoinsajt/pages/frontpage.dart';
 import 'package:cacicoinsajt/pages/nebudicaci.dart';
 import 'package:cacicoinsajt/pages/opiscacija.dart';
@@ -36,6 +37,7 @@ class MainApp extends StatelessWidget {
         '/opiscacija':
             (context) =>
                 const OpiscacijaScreen(), // Ruta za Ne Budi Ćaci stranicu
+        '/cacilend': (context) => const Cacilend(),
       },
     );
   }

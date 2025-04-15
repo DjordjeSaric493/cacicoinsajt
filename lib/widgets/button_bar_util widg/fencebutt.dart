@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:cacicoinsajt/utils/text/textstyles.dart'; // Pretpostavljam da ovde imate definisan stil za tekst
 
 class FenceButton extends StatefulWidget {
-  final String buttonText;
-  final Widget nextPage;
+  final String? buttonText;
   final String fenceImagePath;
+  final TextStyle? buttonTextStyle; // Dodatni parametar za stil teksta dugmeta
 
   const FenceButton({
     Key? key,
-    required this.buttonText,
-    required this.nextPage,
+    this.buttonText,
     required this.fenceImagePath,
+    this.buttonTextStyle, // Inicijalizujte novi parametar
   }) : super(key: key);
 
   @override
@@ -19,9 +20,10 @@ class FenceButton extends StatefulWidget {
 class _FenceButtonState extends State<FenceButton> {
   bool _animationComplete = false;
   bool _animating = false;
+  double _buttonWidth = 140.0; // Pretpostavljena širina dugmeta
 
   void _startAnimation() {
-    if (!_animating) {
+    if (!_animating && !_animationComplete) {
       setState(() {
         _animating = true;
       });
@@ -36,54 +38,75 @@ class _FenceButtonState extends State<FenceButton> {
 
   void _navigateToNextPage() {
     if (_animationComplete) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => widget.nextPage),
-      );
+      Navigator.pushNamed(context, '/cacilend');
     }
   }
 
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final fenceHeight = 80.0; // Podesite visinu ograde prema potrebi
+    final originalFenceHeight = 100.0;
+    final fenceHeight = originalFenceHeight * 1.3;
+    final fenceWidth = _buttonWidth * 1.2;
 
-    return SizedBox(
-      width: screenWidth,
-      height: fenceHeight,
-      child: Stack(
-        children: [
-          // Dugme koje je inicijalno sakriveno iza ograde
-          Positioned.fill(
-            child: Center(
-              child: Visibility(
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        SizedBox(
+          width: screenWidth,
+          height: fenceHeight,
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              Visibility(
                 visible: _animationComplete,
-                child: ElevatedButton(
-                  onPressed: _navigateToNextPage,
-                  child: Text(widget.buttonText),
+                child: SizedBox(
+                  width: _buttonWidth,
+                  height: fenceHeight,
+                  child: ElevatedButton(
+                    onPressed: _navigateToNextPage,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor:
+                          Colors.grey[300], // Svetlosiva boja pozadine
+                      padding: const EdgeInsets.symmetric(horizontal: 24),
+                    ),
+                    child: Center(
+                      // Explicitno centriranje teksta
+                      child: Text(
+                        "?",
+                        style:
+                            widget.buttonTextStyle ??
+                            dekkoTextStyle.copyWith(
+                              fontSize: 32,
+                            ), // Koristite prosleđeni stil ili podrazumevani
+                      ),
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ),
-          // Ograda
-          AnimatedPositioned(
-            duration: const Duration(milliseconds: 500),
-            left:
-                _animating
-                    ? screenWidth
-                    : 0, // Kada animacija počne, ograda ide desno
-            top: 0,
-            child: GestureDetector(
-              onTap: _animating ? null : _startAnimation,
-              child: SizedBox(
-                width: screenWidth / 10,
-                height: fenceHeight,
-                child: Image.asset(widget.fenceImagePath, fit: BoxFit.cover),
+              Visibility(
+                visible: !_animationComplete,
+                child: GestureDetector(
+                  onTap: _animating ? null : _startAnimation,
+                  child: SizedBox(
+                    width: fenceWidth,
+                    height: fenceHeight,
+                    child: Image.asset(
+                      widget.fenceImagePath,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
               ),
-            ),
+            ],
           ),
-        ],
-      ),
+        ),
+        const SizedBox(height: 8),
+        Text(
+          _animationComplete ? 'UĐI U ĆACILEND' : 'PROBIJ OGRADU',
+          style: dekkoTextStyle.copyWith(fontSize: 18),
+        ),
+      ],
     );
   }
 }

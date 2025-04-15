@@ -36,7 +36,7 @@ class OpiscacijaScreen extends StatelessWidget {
                 Text(
                   OpisCacijaSrb.opis,
                   style: dekkoTextStyle.copyWith(fontSize: 34),
-                  textAlign: TextAlign.center,
+                  textAlign: TextAlign.justify,
                 ),
                 const SizedBox(
                   height: 30,
