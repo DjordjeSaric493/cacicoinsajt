@@ -99,7 +99,7 @@ class _FrontPageState extends State<FrontPage> {
                                 isMobile: isMobile,
                                 onPressed: () {},
                               ),
-                              const SizedBox(height: 40),
+                              const SizedBox(height: 41),
                               FenceButton(
                                 buttonText: 'Uđi u ĆACILEND',
                                 fenceImagePath:
