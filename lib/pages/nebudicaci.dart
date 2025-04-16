@@ -34,13 +34,15 @@ class NebudiCaciScreen extends StatelessWidget {
                 const SizedBox(height: 20),
                 Text(
                   'NE BUDI ĆACI',
-                  style: deliciousTextStyleBig,
+                  style: deliciousTextStyleBig.copyWith(
+                    fontSize: isMobile ? 36 : 48,
+                  ),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 10),
                 Text(
                   'U komplikovanim, turbulentnim vremenima, u kojima stvarnost poprima obrise mnogo veće od nas samih, budi Ćaci-ne budi Ćaci, postaje ključni individualni doprinos potonuća ili prosperiteta čitave nacije. Prepoznaj, promeni, pobedi Ćacija, kako u sebi, tako i oko sebe. Upoznaj se sa trajnom edukacijom!',
-                  style: dekkoTextStyle.copyWith(fontSize: 30),
+                  style: dekkoTextStyle.copyWith(fontSize: isMobile ? 20 : 28),
                   textAlign: TextAlign.justify,
                 ),
                 const SizedBox(

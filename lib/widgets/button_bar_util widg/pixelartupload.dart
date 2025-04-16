@@ -123,7 +123,7 @@ class _PixelArtUploadFormState extends State<PixelArtUploadForm> {
 
   Future<void> _submitForm() async {
     if (_walletController.text.isEmpty) {
-      _showError("Molimo unesite Wallet ID");
+      _showError("Molimo unesite Wallet adresu");
       return;
     }
 
@@ -260,7 +260,7 @@ class _PixelArtUploadFormState extends State<PixelArtUploadForm> {
           ),
           const SizedBox(height: 10),
           Text(
-            'Zli Ćaci, Ludi Ćaci',
+            'pr. Zli Ćaci, Ludi Ćaci',
             style: dekkoTextSmall,
             textAlign: TextAlign.center,
           ),
@@ -286,14 +286,14 @@ class _PixelArtUploadFormState extends State<PixelArtUploadForm> {
           TextField(
             controller: _walletController,
             decoration: InputDecoration(
-              labelText: 'Unesi Wallet ID adresu',
+              labelText: 'Unesi Wallet adresu',
               labelStyle: dekkoTextSmall,
               hintText: '0x... (42 karaktera)',
               border: const OutlineInputBorder(),
               errorText:
                   _walletController.text.isNotEmpty &&
                           !_isValidWalletId(_walletController.text)
-                      ? 'Wallet ID mora početi sa 0x i imati tačno 42 karaktera'
+                      ? 'Wallet adresa mora početi sa 0x i imati tačno 42 karaktera'
                       : null,
             ),
             maxLength: 42,
@@ -337,7 +337,7 @@ class _PixelArtUploadFormState extends State<PixelArtUploadForm> {
                 _isUploading
                     ? const CircularProgressIndicator(color: Colors.white)
                     : Text(
-                      "Pošalji i zarađuj Ćacicoin-e",
+                      "Pošalji i zaradi Ćacicoin-e",
                       style: dekkoTextSmall,
                     ),
           ),

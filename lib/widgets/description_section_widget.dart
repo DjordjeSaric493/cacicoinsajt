@@ -120,7 +120,7 @@ class _DescriptionSectionState extends State<DescriptionSection> {
               Center(
                 child: Text(
                   AppStringsSrb.whoAreWeDescription,
-                  style: dekkoTextStyle,
+                  style: dekkoTextStyle.copyWith(fontSize: widget.isMobile ? 20 : 28), //isMobile
                   textAlign: TextAlign.justify,
                 ),
               ),

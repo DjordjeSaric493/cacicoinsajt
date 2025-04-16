@@ -85,7 +85,7 @@ class _CaciCoinSectionState extends State<CaciCoinSection> {
           style: deliciousTextStyleBigRed,
           textAlign: TextAlign.center,
         ),
-        SizedBox(height: 14),
+        SizedBox(height: 1),
         Text(
           'Kupovina Ćacicoin-a',
           style: deliciousTextStyleBig,

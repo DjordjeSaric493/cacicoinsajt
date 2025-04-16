@@ -29,10 +29,12 @@ class OpiscacijaScreen extends StatelessWidget {
                 const SizedBox(height: 20),
                 Text(
                   'SIMBOL BEZ SUŠTINE - FENOMEN ĆACI',
-                  style: deliciousTextStyleRed,
+                  style: deliciousTextStyleRed.copyWith(
+                    fontSize: isMobile ? 36 : 48,
+                  ),
                   textAlign: TextAlign.center,
                 ),
-                //const SizedBox(height: 7),
+                const SizedBox(height: 20),
                 Text(
                   OpisCacijaSrb.opis,
                   style: dekkoTextStyle.copyWith(

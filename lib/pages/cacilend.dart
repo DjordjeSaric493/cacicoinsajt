@@ -42,15 +42,15 @@ class Cacilend extends StatelessWidget {
                 Text(
                   'Zid srama',
                   style: deliciousTextStyleBigRed.copyWith(
-                    fontSize: isMobile ? 28 : 36,
+                    fontSize: isMobile ? 36 : 48,
                   ),
                 ),
                 SizedBox(height: isMobile ? 12 : 24),
                 Text(
-                  'Prst na čelo ćaci, na zidu si, a voleo bi da nisi!\n'
+                  'Prst na čelo ćaci, na zidu si, a voleo bi da nisi! '
                   'Dobra vest je da postoji način, loša vest za tebe - nema'
-                  ' “kozmetike", zahteva suštinu. Nepoznata teritorija,'
-                  ' hmmm…jeste, ali ne brini!\n'
+                  ' "kozmetike", zahteva suštinu. Nepoznata teritorija,'
+                  ' hmmm… jeste, ali ne brini!'
                   'Pokaži za početak dovoljno skromnosti da prihvatiš činjenično stanje, '
                   'preuzmi odgovornost za situaciju u kojoj se nalaziš, pronađi hrabrosti u sebi '
                   'za potrebnu inicijativu u delima koja ti pomažu da se suočiš sa svim izazovima '
@@ -59,8 +59,8 @@ class Cacilend extends StatelessWidget {
                   textAlign: TextAlign.justify,
                 ),
                 const SizedBox(height: 20),
-                Text('Dodaj svog Ćacija!!!', style: dekkoTextStyle),
-                const SizedBox(height: 40),
+                Text('Dodaj svog Ćacija!!!', style: deliciousTextStyle),
+                const SizedBox(height: 14),
                 PixelArtButton(isMobile: isMobile, onPressed: () {}),
                 const SizedBox(height: 40),
                 ConstrainedBox(

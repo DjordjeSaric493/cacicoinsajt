@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cacicoinsajt/utils/text/textstyles.dart';
+import 'package:cacicoinsajt/utils/text/textstyles.dart';
 
 class HeroSection extends StatelessWidget {
   final bool isMobile;
@@ -20,43 +21,41 @@ class HeroSection extends StatelessWidget {
         Center(
           child: SizedBox(
             width: appBarWidth,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  // Promenjeno iz Expanded u Padding
-                  padding: EdgeInsets.only(
-                    right: isMobile ? 20 : 30,
-                  ), // Smanjen padding
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        'FENOMEN',
-                        style: deliciousTextStyleBig,
-                        // textAlign: TextAlign.right, // Uklonjeno
+            child:
+                isMobile
+                    ? Center(
+                      child: Image.asset(
+                        'assets/cacicoin.png',
+                        width:
+                            300, // možeš smanjiti veličinu za mobilne ako treba
+                        height: 300,
                       ),
-                      Text(
-                        'ĆACI',
-                        style: deliciousTextStyleBig,
-                        // textAlign: TextAlign.right, // Uklonjeno
-                      ),
-                    ],
-                  ),
-                ),
-                if (!isMobile)
-                  Transform.translate(
-                    offset: const Offset(-2, 0), // Prilagođeno pomeranje slike
-                    child: Image.asset(
-                      'assets/cacicoin.png',
-                      width: 550,
-                      height: 520,
+                    )
+                    : Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(right: isMobile ? 20 : 30),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text('FENOMEN', style: deliciousTextStyleBig),
+                              Text('ĆACI', style: deliciousTextStyleBig),
+                            ],
+                          ),
+                        ),
+                        Transform.translate(
+                          offset: const Offset(-2, 0),
+                          child: Image.asset(
+                            'assets/cacicoin.png',
+                            width: 550,
+                            height: 520,
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-              ],
-            ),
           ),
         ),
       ],

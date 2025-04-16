@@ -92,9 +92,9 @@ class _FrontPageState extends State<FrontPage> {
                               const SizedBox(height: 40),
                               Text(
                                 'Dodaj svog Ćacija!!!',
-                                style: dekkoTextStyle,
+                                style: deliciousTextStyle,
                               ),
-                              const SizedBox(height: 40),
+                              const SizedBox(height: 20),
                               PixelArtButton(
                                 isMobile: isMobile,
                                 onPressed: () {},

@@ -101,10 +101,10 @@ class _FenceButtonState extends State<FenceButton> {
             ],
           ),
         ),
-        const SizedBox(height: 8),
+        const SizedBox(height: 1),
         Text(
           _animationComplete ? 'UĐI U ĆACILEND' : 'PROBIJ OGRADU',
-          style: dekkoTextStyle.copyWith(fontSize: 18),
+          style: dekkoTextStyle,
         ),
       ],
     );

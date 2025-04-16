@@ -41,7 +41,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                     () => Navigator.pushNamed(context, '/cacicoin'),
                   ),
                   _buildNavItemRed(
-                    'Ne budi ćaci',
+                    'Ne budi ćaci!',
                     () => Navigator.pushNamed(context, '/nebudicaci'),
                   ),
                   _buildNavItemRed(

@@ -29,7 +29,7 @@ class PixelArtScreen extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           Text(
-            'Nagrada: 1000 Ćacicoin-a (max 3 puta po wallet)',
+            'Nagrada: 1000 Ćacicoin-a (max 3 puta po wallet-u)',
             style: dekkoTextStyleRed,
             textAlign: TextAlign.center,
           ),

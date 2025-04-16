@@ -106,11 +106,6 @@ class AppStringsEng {
 
 class OpisCacijaSrb {
   static const String opis = """
-
-U Srbiji, 1. novembra 2024. godine, na železničkoj stanici u Novom Sadu došlo je do stravične tragedije kada se obrušila nadstrešnica ispred ulaza i usmrtila 16-oro ljudi, nakon samo 3 meseca od završene rekonstrukcije i svečanog otvaranja stanice.
-
-Simbol bez suštine-fenomen Ćaci
-
 U Srbiji, 1. novembra 2024. godine, na železničkoj stanici u Novom Sadu došlo je do stravične tragedije kada se obrušila nadstrešnica ispred ulaza i usmrtila 16-oro ljudi, nakon samo 3 meseca od završene rekonstrukcije i svečanog otvaranja stanice.
 
 Studenti iz cele Srbije su kao uzrok te tragedije prepoznali nemar, nestručnost i korupciju, i odlučili da jedinstveni i solidarni blokiraju rad svih fakulteta na sva četiri državna univerziteta, postavljajući zahteve čijim ispunjenjem bi bila zadovoljena pravda, krivci bi odgovarali, a institucije bi se oslobodile od nepravde i korumpiranosti. Započeli su svakodnevne masovne proteste i okupljanja i vrlo brzo dobili podršku od većine građana gotovo u svim mestima u državi. Masovno su počele, po ugledu na studente, i blokade srednjih škola u državi. Učenici su svakog dana izlazili ispred škole u vreme nastave i podržavali studentske zahteve, odbijajući da prisustvuju nastavi.
@@ -125,10 +120,10 @@ Dobra vest je da su još uvek u manjini i da to nije trajno stanje, moguće je v
 Ćaci - osoba koja je kupila diplomu kod drugog ćacija na privatnom fakultetu i misli da na taj način postaje ravnopravni član akademske zajednice. Nesvesna značaja obrazovanja u životu, Ćaci uglavnom misli da obrazovanje znači posedovati diplomu, a ne znanje.
 Ovo nije pravilo, iako je vrlo često u populaciji Ćacija. Treba reći da Ćaci postoje u svim slojevima obrazovnog sistema, ima ih i sa regularnim diplomama.
 
-Ćaci- osoba koja redovno ume bestidno da slaže, i sutradan kada se ta laž otkrije on poriče da je to izgovorio, iako postoje hiljadu snimaka te njegove izjave, pokušava da zameni tezu, agresivno napada sve uključene i besramno njih optužuje za laž, bez obzira na evidentne dokaze.
+Ćaci - osoba koja redovno ume bestidno da slaže, i sutradan kada se ta laž otkrije on poriče da je to izgovorio, iako postoje hiljadu snimaka te njegove izjave, pokušava da zameni tezu, agresivno napada sve uključene i besramno njih optužuje za laž, bez obzira na evidentne dokaze.
 U pomoć poziva druge Ćacije ne bi li nadjačao optužbu, zajednički, orkestrirano spinuju koristeći isključivo princip Argumentum ad hominem.
 
-Ćaci -osoba bez trunke integriteta, koja je spremna za šaku dolara (najnižim u hijerarhiji je dovoljan i sendvič) da uradi sve što mu se naredi, pritom ne uključujući savest ,da li je to dobro ili zlo, tačnije -savest kod njega ne postoji.
+Ćaci - osoba bez trunke integriteta, koja je spremna za šaku dolara (najnižim u hijerarhiji je dovoljan i sendvič) da uradi sve što mu se naredi, pritom ne uključujući savest ,da li je to dobro ili zlo, tačnije -savest kod njega ne postoji.
 
 Ćaci nije određen godinama starosti. Postoje i tinejdžeri, i sredovečni, i matori ćaciji. Ćacija ne određuje rod (ima i muških i ženskih), nacionalnost, boja kože, niti religija, rasprostranjeni su na čitavoj planeti.
 
