@@ -98,7 +98,7 @@ class _CaciCoinSectionState extends State<CaciCoinSection> {
           textAlign: TextAlign.center,
         ),
         SizedBox(height: 20),
-        UputstvoButton(),
+        // UputstvoButton(),
         /*Padding(
           padding: const EdgeInsets.symmetric(vertical: 16.0),
           child: ElevatedButton(

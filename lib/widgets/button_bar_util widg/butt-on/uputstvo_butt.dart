@@ -1,7 +1,8 @@
+/* TODO:UPEGLAJ OVO POGLEDAJ PORTFOLIO SAJT KAKO
+
 import 'dart:ui' as ui;
 import 'dart:html'; // za IFrameElement
 import 'package:flutter/material.dart';
-import 'package:cacicoinsajt/utils/text/textstyles.dart';
 
 class UputstvoButton extends StatefulWidget {
   const UputstvoButton({super.key});
@@ -41,21 +42,21 @@ class _UputstvoButtonState extends State<UputstvoButton>
   }
 
   Widget _buildIframe(String videoId, String viewId) {
-    // Registruj view samo jednom
-    // Moraš koristiti jedinstveni viewId za svaki video
-    // ignore: undefined_prefixed_name
-    ui.platformViewRegistry.registerViewFactory(viewId, (int viewId) {
-      final IFrameElement element =
-          IFrameElement()
-            ..width = '100%'
-            ..height = '100%'
-            ..src = 'https://www.youtube.com/embed/$videoId'
-            ..style.border = 'none'
-            ..allowFullscreen = true;
-      return element;
-    });
+    if (kIsWeb) {
+      // Registruj view samo ako je Web platforma
+      ui.platformViewRegistry.registerViewFactory(viewId, (int viewId) {
+        final IFrameElement element = IFrameElement()
+          ..width = '100%'
+          ..height = '100%'
+          ..src = 'https://www.youtube.com/embed/$videoId'
+          ..style.border = 'none'
+          ..allowFullscreen = true;
+        return element;
+      });
 
-    return SizedBox(height: 200, child: HtmlElementView(viewType: viewId));
+      return SizedBox(height: 200, child: HtmlElementView(viewType: viewId));
+    }
+    return Container(); // Za ostale platforme (ako je aplikacija pokrenuta na Androidu ili iOS)
   }
 
   @override
@@ -78,7 +79,7 @@ class _UputstvoButtonState extends State<UputstvoButton>
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('Uputstvo', style: dekkoTextStyleWhite),
+              Text('Uputstvo', style: TextStyle(color: Colors.white)),
               const SizedBox(width: 8),
               Icon(
                 _isExpanded ? Icons.arrow_drop_up : Icons.arrow_drop_down,
@@ -106,3 +107,4 @@ class _UputstvoButtonState extends State<UputstvoButton>
     );
   }
 }
+*/
