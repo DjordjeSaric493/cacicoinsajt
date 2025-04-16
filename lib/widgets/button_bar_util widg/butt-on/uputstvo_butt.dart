@@ -1,8 +1,5 @@
-/* TODO:UPEGLAJ OVO POGLEDAJ PORTFOLIO SAJT KAKO
-
-import 'dart:ui' as ui;
-import 'dart:html'; // za IFrameElement
 import 'package:flutter/material.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 class UputstvoButton extends StatefulWidget {
   const UputstvoButton({super.key});
@@ -11,21 +8,29 @@ class UputstvoButton extends StatefulWidget {
   State<UputstvoButton> createState() => _UputstvoButtonState();
 }
 
-class _UputstvoButtonState extends State<UputstvoButton>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _expandController;
-  late Animation<double> _expandAnimation;
+class _UputstvoButtonState extends State<UputstvoButton> with SingleTickerProviderStateMixin {
   bool _isExpanded = false;
+  late AnimationController _controller;
+  late Animation<double> _expandAnimation;
+  late InAppWebViewGroupOptions options;
 
   @override
   void initState() {
     super.initState();
-    _expandController = AnimationController(
+    options = InAppWebViewGroupOptions(
+      crossPlatform: InAppWebViewOptions(
+        useShouldOverrideUrlLoading: true,
+        mediaPlaybackRequiresUserGesture: false,
+      ),
+    );
+
+    _controller = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 300),
     );
+
     _expandAnimation = CurvedAnimation(
-      parent: _expandController,
+      parent: _controller,
       curve: Curves.easeInOut,
     );
   }
@@ -34,41 +39,32 @@ class _UputstvoButtonState extends State<UputstvoButton>
     setState(() {
       _isExpanded = !_isExpanded;
       if (_isExpanded) {
-        _expandController.forward();
+        _controller.forward();
       } else {
-        _expandController.reverse();
+        _controller.reverse();
       }
     });
   }
 
-  Widget _buildIframe(String videoId, String viewId) {
-    if (kIsWeb) {
-      // Registruj view samo ako je Web platforma
-      ui.platformViewRegistry.registerViewFactory(viewId, (int viewId) {
-        final IFrameElement element = IFrameElement()
-          ..width = '100%'
-          ..height = '100%'
-          ..src = 'https://www.youtube.com/embed/$videoId'
-          ..style.border = 'none'
-          ..allowFullscreen = true;
-        return element;
-      });
-
-      return SizedBox(height: 200, child: HtmlElementView(viewType: viewId));
-    }
-    return Container(); // Za ostale platforme (ako je aplikacija pokrenuta na Androidu ili iOS)
+  Widget _buildWebView(String url) {
+    return SizedBox(
+      height: 200,
+      child: InAppWebView(
+        initialUrlRequest: URLRequest(url: WebUri(url)),
+        initialOptions: options,
+      ),
+    );
   }
 
   @override
   void dispose() {
-    _expandController.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.min,
       children: [
         ElevatedButton(
           onPressed: _toggleExpansion,
@@ -79,7 +75,7 @@ class _UputstvoButtonState extends State<UputstvoButton>
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('Uputstvo', style: TextStyle(color: Colors.white)),
+              const Text('Uputstvo', style: TextStyle(color: Colors.white)),
               const SizedBox(width: 8),
               Icon(
                 _isExpanded ? Icons.arrow_drop_up : Icons.arrow_drop_down,
@@ -90,21 +86,19 @@ class _UputstvoButtonState extends State<UputstvoButton>
         ),
         SizeTransition(
           sizeFactor: _expandAnimation,
-          child: Padding(
-            padding: const EdgeInsets.only(top: 8.0),
-            child: Column(
-              children: [
-                _buildIframe('2Drca5ZSGfI', 'yt_iframe_1'),
-                const SizedBox(height: 8),
-                _buildIframe('jkyUXIY3NmU', 'yt_iframe_2'),
-                const SizedBox(height: 8),
-                _buildIframe('F-489Q-MYH8', 'yt_iframe_3'),
-              ],
-            ),
+          child: Column(
+            children: [
+              const SizedBox(height: 12),
+              _buildWebView('https://www.youtube.com/embed/2Drca5ZSGfI'),
+              const SizedBox(height: 12),
+              _buildWebView('https://www.youtube.com/embed/jkyUXIY3NmU'),
+              const SizedBox(height: 12),
+              _buildWebView('https://www.youtube.com/embed/F-489Q-MYH8'),
+              const SizedBox(height: 25),
+            ],
           ),
         ),
       ],
     );
   }
 }
-*/

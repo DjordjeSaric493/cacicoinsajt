@@ -118,6 +118,7 @@ class _CaciCoinSectionState extends State<CaciCoinSection> {
             child: Text('Uputstvo', style: dekkoTextSmallWhite),
           ),
         ),*/
+        UputstvoButton(),
         SizedBox(height: 26),
         CrtTokenomicsMonitor(),
         SizedBox(height: 26),
