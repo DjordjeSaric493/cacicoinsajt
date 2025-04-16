@@ -67,11 +67,11 @@ class _CrtTokenomicsMonitorState extends State<CrtTokenomicsMonitor> {
                   context,
                   'PRESALE RATE: 1 ĆACI = 0.0000001 BNB',
                 ),
-                if (!isMobile)
+                /* if (!isMobile)
                   _buildFramedText(
                     context,
                     '= 0.0069 RSD = 0.000063 USD = 0.000055 EUR',
-                  ),
+                  ),*/
                 _buildFramedText(
                   context,
                   'PRESALE DOSTUPNO: 10,000,000,000 ĆACI',

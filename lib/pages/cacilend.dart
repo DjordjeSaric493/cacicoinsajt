@@ -1,5 +1,5 @@
 import 'package:cacicoinsajt/utils/text/textstyles.dart';
-import 'package:cacicoinsajt/widgets/button_bar_util%20widg/dodajcacijabutt.dart';
+import 'package:cacicoinsajt/widgets/button_bar_util%20widg/butt-on/dodajcacijabutt.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 import 'dart:html' as html;
@@ -49,8 +49,8 @@ class Cacilend extends StatelessWidget {
                 Text(
                   'Prst na čelo ćaci, na zidu si, a voleo bi da nisi!\n'
                   'Dobra vest je da postoji način, loša vest za tebe - nema'
-                  '“kozmetike", zahteva suštinu. Nepoznata teritorija,'
-                  'hmmm…jeste, ali ne brini!\n'
+                  ' “kozmetike", zahteva suštinu. Nepoznata teritorija,'
+                  ' hmmm…jeste, ali ne brini!\n'
                   'Pokaži za početak dovoljno skromnosti da prihvatiš činjenično stanje, '
                   'preuzmi odgovornost za situaciju u kojoj se nalaziš, pronađi hrabrosti u sebi '
                   'za potrebnu inicijativu u delima koja ti pomažu da se suočiš sa svim izazovima '

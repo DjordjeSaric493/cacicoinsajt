@@ -5,6 +5,7 @@ import 'package:cacicoinsajt/pages/opiscacija.dart';
 import 'package:cacicoinsajt/utils/text/appstrings.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

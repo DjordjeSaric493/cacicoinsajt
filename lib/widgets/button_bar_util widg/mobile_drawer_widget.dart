@@ -33,7 +33,7 @@ class MobileDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text('ČACILEND', style: dekkoTextStyle),
+            title: Text('Ćacilend', style: dekkoTextStyleRed),
             onTap: () {
               Navigator.pop(context); // zatvara drawer
               Navigator.pushNamed(context, '/cacilend');
@@ -47,7 +47,7 @@ class MobileDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text('ne budi ćaci', style: dekkoTextStyle),
+            title: Text('Ne budi ćaci', style: dekkoTextStyle),
             onTap: () {
               Navigator.pop(context); // zatvara drawer
               Navigator.pushNamed(context, '/nebudicaci');

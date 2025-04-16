@@ -20,10 +20,10 @@ class AppStringsSrb {
   static const String descriptionButton = "opis Ćacija";
   static const String whoAreWe = "Ko smo mi?";
   static const String whoAreWeDescription =
-      "Mi smo tim koji stoji iza ĆaciCoin-a -inovativnog kripto projekta na internetu, edukativno-zabavnog karaktera! "
+      "Mi smo tim koji stoji iza ĆaciCoin-a - inovativnog kripto projekta na internetu, edukativno - zabavnog karaktera! "
       "ĆaciCoin je parodija na etiku ličnosti, ali sa ozbiljnom misijom - da ukaže na pogrešne vrednosti i pokrene etiku karaktera.\n\n"
       "Iako sve radimo sa osmehom, ne zaboravljamo ni one kojima je pomoć najpotrebnija, zato će ĆaciCoin imati i humanitarnu crtu, jer smeh i dobrota idu ruku pod ruku!\n\n"
-      "Pridruži se našoj zajednici i postani deo krypto revolucije u buđenju svesti, empatije i savesti kod ljudi!";
+      "Pridruži se našoj zajednici i postani deo kripto revolucije u buđenju svesti, empatije i savesti kod ljudi!";
   static const String phenomenon = "FENOMEN";
   static const String caci = "ĆACI";
 
@@ -107,42 +107,46 @@ class AppStringsEng {
 class OpisCacijaSrb {
   static const String opis = """
 
+U Srbiji, 1. novembra 2024. godine, na železničkoj stanici u Novom Sadu došlo je do stravične tragedije kada se obrušila nadstrešnica ispred ulaza i usmrtila 16-oro ljudi, nakon samo 3 meseca od završene rekonstrukcije i svečanog otvaranja stanice.
 
-U Srbiji, 1. novembra 2024. godine, na železničkoj stanici u Novom Sadu došlo je do stravične tragedije kada se obrušila nadstrešnica ispred ulaza i usmrtila 16-oro ljudi, nakon samo 3 meseca od završene  rekonstrukcije i svečanog otvaranja stanice.
+Simbol bez suštine-fenomen Ćaci
 
-Studenti iz cele Srbije su kao uzrok te tragedije prepoznali nemar, nestručnost i korupciju  i odlučili da ,jedinstveni i solidarni, blokiraju rad svih fakulteta na sva četiri državna univerziteta, 
-postavljajući zahteve čijim ispunjenjem bi bila zadovoljena pravda, krivci bi odgovarali, a institucije bi se oslobodile od nepravde i korumpiranosti.
+U Srbiji, 1. novembra 2024. godine, na železničkoj stanici u Novom Sadu došlo je do stravične tragedije kada se obrušila nadstrešnica ispred ulaza i usmrtila 16-oro ljudi, nakon samo 3 meseca od završene rekonstrukcije i svečanog otvaranja stanice.
 
-Započeli su svakodnevne masovne proteste i okupljanja i vrlo brzo dobili podršku od većine građana gotovo u svim mestima u državi. Masovno su počele, po ugledu na studente, i blokade srednjih škola u državi. 
-Učenici su svakog dana izlazili ispred škole u vreme nastave i podržavali studentske zahteve, odbijajući da prisustvuju nastavi.
+Studenti iz cele Srbije su kao uzrok te tragedije prepoznali nemar, nestručnost i korupciju, i odlučili da jedinstveni i solidarni blokiraju rad svih fakulteta na sva četiri državna univerziteta, postavljajući zahteve čijim ispunjenjem bi bila zadovoljena pravda, krivci bi odgovarali, a institucije bi se oslobodile od nepravde i korumpiranosti. Započeli su svakodnevne masovne proteste i okupljanja i vrlo brzo dobili podršku od većine građana gotovo u svim mestima u državi. Masovno su počele, po ugledu na studente, i blokade srednjih škola u državi. Učenici su svakog dana izlazili ispred škole u vreme nastave i podržavali studentske zahteve, odbijajući da prisustvuju nastavi.
 
-Deo građana koji su predstavljali biračko telo vlasti u Srbiji, nisu se slagali sa protestima koje je započela akademska zajednica. 
-Ispred jedne škole, preko noći, osvanuo je grafit "Ćaci u školu".  Pristalica vlasti je želeo da napiše "Đaci u školu", ali očigledno nepismen, đake (đaci) je nazvao "ćaci".
+Deo građana koji su predstavljali biračko telo vlasti u Srbiji, nisu se slagali sa protestima koje je započela akademska zajednica.
+Ispred jedne škole, preko noći, osvanuo je grafit: “Ćaci u školu”. Pristalica vlasti je želeo da napiše “Đaci u školu” ali očigledno nepismen, đake (đaci) je nazvao “ćaci”.
 
-Ta reč je postala od tog trenutka sinonim za ljude koji podržavaju vlast. 
-Vremenom, analiziranjem ljudi u vlasti i njihovog biračkog tela u toku turbulentne društvene situacije,  kompletna Srbija je otkrila poražavajuće osobine kod tih ljudi i formirana je realna slika o njima 
-kao jednoj društvenoj pošasti koja dezintegriše državu, urušava institucije i gazi elementarne ljudske vrednosti i principe. 
-Novonastala reč Ćaci je dobila mnogo šire značenje od običnog nepismenog čoveka koji je sve to započeo. 
-Ono što je interesantno, nakon inicijalne definicije pojma Ćaci kao sinonima trenutne vlasti i njenih pristalica,  moglo se videti da slični obrasci etike ličnosti izlaze iz tih okvira i mogu se prepoznati na svakom koraku i u celom društvu, 
-bez obzira na političke motive, Ćaciji su svuda oko nas. Dobra vest je da su još uvek u manjini i da nije trajno stanje, moguće je vratiti ih na pravi put.
+Ta reč je postala od tog trenutka sinonim za ljude koji podržavaju vlast. Vremenom, analiziranjem ljudi u vlasti i njihovog biračkog tela u toku turbulentne društvene situacije, kompletna Srbija je otkrila poražavajuće osobine kod tih ljudi i formirana je realna slika o njima kao jednoj društvenoj pošasti koja dezintegriše državu, urušava institucije i gazi elementarne ljudske vrednosti i principe. Novonastala reč Ćaci je dobila mnogo šire značenje od običnog nepismenog čoveka koji je sve to započeo.
+Ono što je interesantno, nakon inicijalne definicije pojma Ćaci kao sinonima trenutne vlasti i njenih pristalica, moglo se videti da slični obrazci etike ličnosti izlaze iz tih okvira i mogu se prepoznati na svakom koraku i u celom društvu, bez obzira na politiške motive, Ćaciji su svuda oko nas.
+Dobra vest je da su još uvek u manjini i da to nije trajno stanje, moguće je vratiti ih na pravi put.
 
-Ćaci - osoba koja je kupila diplomu kod drugog ćacija na fakultetu i misli da na taj način postaje ravnopravni član akademske zajednice. 
-Nesvesna značaja obrazovanja u životu, Ćaci uglavnom misli da obrazovanje znači posedovati diplomu, a ne znanje.
+Ćaci - osoba koja je kupila diplomu kod drugog ćacija na privatnom fakultetu i misli da na taj način postaje ravnopravni član akademske zajednice. Nesvesna značaja obrazovanja u životu, Ćaci uglavnom misli da obrazovanje znači posedovati diplomu, a ne znanje.
+Ovo nije pravilo, iako je vrlo često u populaciji Ćacija. Treba reći da Ćaci postoje u svim slojevima obrazovnog sistema, ima ih i sa regularnim diplomama.
 
-Ćaci - osoba koja redovno ume bestidno da slaže, i sutradan kada se ta laž otkrije, on poriče da je to izgovorio, iako postoje hiljadu snimaka te njegove izjave, pokušava da zameni tezu, 
-agresivno napada sve uključene i besramno njih optužuje za laž, bez obzira na evidentne dokaze.
+Ćaci- osoba koja redovno ume bestidno da slaže, i sutradan kada se ta laž otkrije on poriče da je to izgovorio, iako postoje hiljadu snimaka te njegove izjave, pokušava da zameni tezu, agresivno napada sve uključene i besramno njih optužuje za laž, bez obzira na evidentne dokaze.
+U pomoć poziva druge Ćacije ne bi li nadjačao optužbu, zajednički, orkestrirano spinuju koristeći isključivo princip Argumentum ad hominem.
 
-Ćaci nije određen godinama starosti. Postoje i tinejdžeri, i sredovečni, i matori ćaciji. 
-Ćacija ne određuje rod (ima i muških i ženskih), nacionalnost, boja kože, niti religija, rasprostranjeni su na čitavoj planeti.
+Ćaci -osoba bez trunke integriteta, koja je spremna za šaku dolara (najnižim u hijerarhiji je dovoljan i sendvič) da uradi sve što mu se naredi, pritom ne uključujući savest ,da li je to dobro ili zlo, tačnije -savest kod njega ne postoji.
 
-Po svemu sudeći, najbolje se osećaju u grupi sa drugim ćacijima i te grupe sa 10+ ćacija nazivamo Ćacilend. 
-Ćacilenda ima na svim nivoima društva, u svim organizacijama, ustanovama i institucijama, po čitavom svetu.
+Ćaci nije određen godinama starosti. Postoje i tinejdžeri, i sredovečni, i matori ćaciji. Ćacija ne određuje rod (ima i muških i ženskih), nacionalnost, boja kože, niti religija, rasprostranjeni su na čitavoj planeti.
 
-Najopasniji je ambiciozni Ćaci, jer poseduje značajne količine lukavstva, koje mu može obezbediti dugo čuvanje te tajne i na taj način godinama je u stanju obmanjivati društvo u kome živi. 
+Ćaci obično ne misle svojom glavom i isključivo komuniciraju naučenim tekstovima napamet. Ti tekstovi van konteksta su isključivo obojeni ličnim interesom. Ćacijev beznačajni zveket je zamenjen komunikativnim govorom. Treba reći i da ti govori gotovo uvek potiču od glavnog manipulativnog Ćacija.
+Ukoliko se neko od njih i drzne da razmisli svojom glavom u konkretnoj situaciji, gotovo uvek napravi problem ili skandal.
+
+Ćaci ne poznaje etiku karaktera, nema empatiju, potpuno odsustvo stida, Ćaci je oportunista i koristoljubiv, njihov sintetički kez je zamenjen iskrenim osmehom, a osećaje praznog i mračnog beznađa u njima predstavljaju, kroz patetiku, kao iskrenu bol i žal.
+
+Naravno, Ćaci ne zna reči himne svoje države. Obožava sendviče, i gotovo uvek ako niko ne gleda neće potražiti kantu nego će ostatke baciti gde stigne. Ukoliko je izložen pogledima, otići će do kante i napraviti selfi i prikazati sebe kao društveno odgovornu osobu.
+
+Inače se u svemu ostalom ne razlikuje od drugih ljudi, što mu omogućava da se bez problema integriše u bilo koje društvo, ali nije sposoban da dugo zadrži tu tajnu da je on u stvari Ćaci.
+
+Po svemu sudeći najbolje se osećaju u grupi sa drugim ćacijima, i te grupe sa 10+ ćacija nazivamo Ćacilend. Ćacilenda ima na svim nivoima društva, u svim organizacijama, ustanovama i institucijama, po čitavom svetu.
+
+Najopasniji je ambiciozni Ćaci, jer poseduje značajne količine lukavstva, koje mu može obezbediti dugo čuvanje te tajne i na taj način godinama je u stanju obmanjivati društvo u kome živi .
 Pod određenim društveno-ekonomskim okolnostima može se vinuti do najviših funkcija pokušavajući da od čitavih država i nacija napravi Ćacilend.
+Međutim, ni najambiciozniji, ni najpametniji Ćaci ne poseduje emocionalnu zrelost, i zbog neodoljive potrebe za samoljubljem i koristoljubljem, kroz istoriju gledano, uvek na kraju završi kao gubitnik i bude prepoznat kao SIMBOL BEZ SUŠTINE.
 
-Međutim, ni najambiciozniji, ni najpametniji Ćaci ne poseduje emocionalnu zrelost, i zbog neodoljive potrebe za samoljubljem i koristoljubljem, kroz istoriju gledano, 
-uvek na kraju završi kao gubitnik i bude prepoznat kao SIMBOL BEZ SUŠTINE.
 """;
 }
 
