@@ -1,5 +1,5 @@
 import 'package:cacicoinsajt/widgets/button_bar_util%20widg/movingsandw.dart';
-import 'package:cacicoinsajt/widgets/button_bar_util%20widg/pumpajcacicoine.dart';
+import 'package:cacicoinsajt/widgets/button_bar_util%20widg/butt-on/pumpajcacicoine.dart';
 import 'package:flutter/material.dart';
 import 'package:cacicoinsajt/utils/text/textstyles.dart';
 
@@ -14,7 +14,7 @@ class _PresalePumpWidgetState extends State<PresalePumpWidget> {
   final DateTime startDate = DateTime(
     2025,
     4,
-    14,
+    16,
   ); // Početni datum presale-a, menjaj za ui
   final int durationInDays = 30;
   bool isLoading = false;

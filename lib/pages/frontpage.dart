@@ -1,6 +1,6 @@
 import 'package:cacicoinsajt/utils/text/textstyles.dart';
-import 'package:cacicoinsajt/widgets/button_bar_util%20widg/dodajcacijabutt.dart';
-import 'package:cacicoinsajt/widgets/button_bar_util%20widg/fencebutt.dart';
+import 'package:cacicoinsajt/widgets/button_bar_util%20widg/butt-on/dodajcacijabutt.dart';
+import 'package:cacicoinsajt/widgets/button_bar_util%20widg/butt-on/fencebutt.dart';
 import 'package:cacicoinsajt/widgets/entercacilend.dart';
 import 'package:cacicoinsajt/widgets/button_bar_util%20widg/pump_bar.dart';
 import 'package:cacicoinsajt/widgets/razbacanicaciji.dart';
@@ -11,7 +11,7 @@ import 'package:cacicoinsajt/widgets/button_bar_util%20widg/mobile_drawer_widget
 import 'package:cacicoinsajt/widgets/hero_section_widget.dart';
 import 'package:cacicoinsajt/widgets/description_section_widget.dart';
 import 'package:cacicoinsajt/widgets/caci_coin_section_widget.dart';
-import 'package:cacicoinsajt/widgets/uputstvosrb.dart';
+import 'package:cacicoinsajt/widgets/uputstvo_dialog.dart';
 
 class FrontPage extends StatefulWidget {
   const FrontPage({super.key});
@@ -24,19 +24,6 @@ class _FrontPageState extends State<FrontPage> {
   @override
   void initState() {
     super.initState();
-  }
-
-  void _showUputstvoDialog() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return const AlertDialog(
-          content: SingleChildScrollView(
-            child: Uputstvosrb(), // Koristite vaš UputstvoSrb widget ovde
-          ),
-        );
-      },
-    );
   }
 
   @override
@@ -96,9 +83,7 @@ class _FrontPageState extends State<FrontPage> {
                           padding: const EdgeInsets.symmetric(vertical: 25),
                           child: Column(
                             children: [
-                              CaciCoinSection(
-                                showUputstvoDialog: _showUputstvoDialog,
-                              ),
+                              CaciCoinSection(),
                               const SizedBox(height: 20),
                               PresalePumpWidget(),
 

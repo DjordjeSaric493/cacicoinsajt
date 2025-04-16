@@ -1,17 +1,19 @@
 import 'package:cacicoinsajt/utils/text/appstrings.dart';
-import 'package:cacicoinsajt/widgets/button_bar_util%20widg/buycaci_butt.dart';
+import 'package:cacicoinsajt/widgets/button_bar_util%20widg/butt-on/buycaci_butt.dart';
+import 'package:cacicoinsajt/widgets/button_bar_util%20widg/butt-on/uputstvo_butt.dart';
 import 'package:cacicoinsajt/widgets/button_bar_util%20widg/crttokenomicsmonitor.dart';
 import 'package:cacicoinsajt/widgets/button_bar_util%20widg/poveziwallet.dart';
-import 'package:cacicoinsajt/widgets/button_bar_util%20widg/ugovori_butt.dart';
+import 'package:cacicoinsajt/widgets/button_bar_util%20widg/butt-on/ugovori_butt.dart';
 import 'package:cacicoinsajt/widgets/uputstvopravo.dart';
+import 'package:cacicoinsajt/widgets/uputstvo_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:cacicoinsajt/utils/text/textstyles.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CaciCoinSection extends StatefulWidget {
-  final Function() showUputstvoDialog;
+  //final Function() showUputstvoDialog;
 
-  const CaciCoinSection({super.key, required this.showUputstvoDialog});
+  const CaciCoinSection({super.key});
 
   @override
   _CaciCoinSectionState createState() => _CaciCoinSectionState();
@@ -95,7 +97,9 @@ class _CaciCoinSectionState extends State<CaciCoinSection> {
           style: deliciousTextStyle,
           textAlign: TextAlign.center,
         ),
-        Padding(
+        SizedBox(height: 20),
+        UputstvoButton(),
+        /*Padding(
           padding: const EdgeInsets.symmetric(vertical: 16.0),
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
@@ -108,12 +112,12 @@ class _CaciCoinSectionState extends State<CaciCoinSection> {
             onPressed: () {
               showDialog(
                 context: context,
-                builder: (BuildContext context) => const CaciPopupCard(),
+                builder: (BuildContext context) => UputstvosrbDialog(),
               );
             },
             child: Text('Uputstvo', style: dekkoTextSmallWhite),
           ),
-        ),
+        ),*/
         SizedBox(height: 26),
         CrtTokenomicsMonitor(),
         SizedBox(height: 26),

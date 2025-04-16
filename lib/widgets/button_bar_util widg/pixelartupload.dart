@@ -176,8 +176,8 @@ class _PixelArtUploadFormState extends State<PixelArtUploadForm> {
       context: context,
       builder:
           (context) => AlertDialog(
-            title: const Text("Uspešno!"),
-            content: const Text("Slika je preuzeta."),
+            title: Text("Uspešno!", style: dekkoTextSmall),
+            content: Text("Slika je preuzeta.", style: dekkoTextSmall),
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(context),
@@ -286,7 +286,8 @@ class _PixelArtUploadFormState extends State<PixelArtUploadForm> {
           TextField(
             controller: _walletController,
             decoration: InputDecoration(
-              labelText: 'Unesi Wallet ID',
+              labelText: 'Unesi Wallet ID adresu',
+              labelStyle: dekkoTextSmall,
               hintText: '0x... (42 karaktera)',
               border: const OutlineInputBorder(),
               errorText:
@@ -335,7 +336,10 @@ class _PixelArtUploadFormState extends State<PixelArtUploadForm> {
             child:
                 _isUploading
                     ? const CircularProgressIndicator(color: Colors.white)
-                    : const Text("Pošalji i zarađuj Ćacicoine"),
+                    : Text(
+                      "Pošalji i zarađuj Ćacicoin-e",
+                      style: dekkoTextSmall,
+                    ),
           ),
         ],
       ),
