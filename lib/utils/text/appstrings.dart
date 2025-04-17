@@ -27,6 +27,71 @@ class AppStringsSrb {
   static const String phenomenon = "FENOMEN";
   static const String caci = "ĆACI";
 
+  static const String politikaPrivatnosti = """
+Vaša privatnost nam je važna.
+Web sajt cacicoin.com ne prikuplja nikakve Vaše lične podatke.
+Sajt ne beleži i ne čuva podatke kao što su ime i prezime, email adresa, broj telefona, IP adresa.
+Sajt ne koristi kolačiće (cookies).
+Da bismo Vam omogućili kupovinu ĆaciCoin-a jedino je potrebno da unesete javni ključ – adresu
+novčanika koja predstavlja niz kombinacije brojeva i slova i mi nemamo uvid u identitet vlasnika
+novčanika.
+Samim tim što ne posedujemo Vaše podatke ne delimo ih trećim licima.
+Prilikom ubacivanja fotografije potencijalnog Ćacija na sajt cacicoin.com, ne beležimo IP adresu
+sa koje se upload-uje fotografija, fotografija se obrađuje sa klijentske strane i ne ubacuje se
+original na server niti se čuva original. Na sajtu stoji blurovana verzija fotografije potencijalnog
+Ćacija koja nije prepoznatljiva te se ne može povezati sa konkretnom osobom. Opis koji je
+obavezan ispod svake fotografije predstavlja lični stav osobe koja postavlja fotografiju, stoga ni
+indirektno nije moguće utvrditi identitet osobe na fotografiji.
+Znači nema lica koje se može prepoznati, nema vlastitih imena i prezimena, lokacije, glasa itd,
+u skladu sa zakonom o zaštiti podataka ličnosti u Srbiji i u skladu sa GDPR u EU.
+Jedini podatak koji se pamti su datum i vreme upload-a fotografije.
+""";
+
+static const String usloviKoriscenja = """
+Posetom našem sajtu smatra se da ste pročitali i da u potpunosti prihvatate dole navedene uslove
+korišćenja. Ukoliko se ne slažete sa navedenim uslovima, molimo Vas da napustite sajt.
+Dobrodošli na cacicoin.com – digitalno igralište za kripto mimove, zabavu i edukaciju!
+Mim tokeni vam omogućavaju da počnete da istražujete kripto tržište bez značajne finansijske obaveze.
+Na kraju svega, većina mim tokena vredi manje od dinara, te bi nekome za dobar početak bilo potrebno
+svega nekoliko dinara.
+
+Korišćenjem ovog sajta slažete se sa sledećim uslovima:
+1. ĆaciCoin je mim token edukativno zabavnog karaktera iza koga stoji interesantna priča popularne
+društvene paradigme u Srbiji.
+2. Kreiran je na Binance Smart Chain platformi kao tip tokena BEP20.
+3. ĆaciCoin je na blokčejnu povezan pametnim ugovorima jasno dostupnim na sajtu cacicoin.com
+4. Utvrđena vrednost ĆaciCoin-a u pre-sale ugovoru je 0,0000001 BNB. Pod tim uslovima razmena
+ĆaciCoin-a i BNB coin-a se obavlja na sajtu cacicoin.com u periodu pre-sale koji traje 30 dana.
+5. Kalkulator za razmenu kripto valuta decentralizovano povezuje svakog zainteresovanog kupca koji
+poseduje BNB sa našim pre-sale pametnim ugovorom koji mu obezbeđuje ĆaciCoin-e prema gore
+spomenutoj vrednosti.
+6. Kreiranje e-walleta se vrši na payment procesoru MetaMask gde važe njihovi uslovi korišćenja i koji je
+bezbedan za vršenje transakcija.
+7. Provizija i fee za razmenu kripto valuta na sajtu ĆaciCoin ne postoje.
+8. ĆaciCoin je primarno osmišljen da jako utiče na društvenu svest ljudi. Povodom toga smo kreirali
+mogućnost da svako ko je zainteresovan može da okači svog Ćacija na stranici Ćacilend, da mu da
+šaljivo karakterističan naziv, a da zauzvrat dobije na poklon 1000 ĆaciCoin-a, u skladu sa pametnim
+ugovorom na blokčejn platformi.
+9. Fotografija je blurovana u skladu sa zakonom o zaštiti podataka fizičkih lica. Strogo su zabranjeni
+uvredljivi komentari i vulgarni izrazi, kao i lični podaci (ime i prezime) dodatih Ćacija. U slučaju da neko
+krši uslove korišćenja vezano za objavu fotografije i naziva Ćacija, i fotografija i naziv će bti cenzurisani i
+odstranjeni sa sajta.
+10. Kupovina mim tokena je isključivo na vašu odgovornost. ĆaciCoin ne garantuje nikakvu dobit, rast
+vrednosti niti prodaju tokena trećim licima.
+11. Svaki kupac ĆaciCoin-a snosi odgovornost za regulisanje poreskih obaveza u skladu sa važećim
+zakonima.
+12. ĆaciCoin obiluje edukativnim sdržajem koji se svakodnevno dodaje i ažurira i prilagođen je svim
+uzrastima.
+13. Svi tekstovi, slike, mimovi i sadžaj na sajtu cacicoin.com su (osim ako nije drugačije naznačeno)
+intelektualna svojina tima osnivača cacicoin.com.
+14. Svi učesnici u razmeni su dužni da istu obavljaju u skladu sa  Zakonom o Digitalnoj Imovini .
+15. Sajt cacicoin.com nije odgovoran za gubitak novca, tokena, vremena ili živaca; tehničke greške i bagove
+u sistemu; neispunjena očekivanja vezana za “to the moon” scenarije.
+16. Sajt cacicoin.com zadržava pravo da u svakom momentu može promeniti ove uslove korišćenja bez
+obaveze da o tome obaveštava korisnike. Eventualni novi uslovi primenjuju se od dana objavljivanja na
+sajtu i smatra se da su korisnici upoznati sa promenama.
+""";
+
   // Dodati stringovi
   static const String createWallet =
       "1. Kreiraj MetaMask wallet ukoliko ga nemaš";

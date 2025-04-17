@@ -12,6 +12,7 @@ import 'package:cacicoinsajt/widgets/hero_section_widget.dart';
 import 'package:cacicoinsajt/widgets/description_section_widget.dart';
 import 'package:cacicoinsajt/widgets/caci_coin_section_widget.dart';
 import 'package:cacicoinsajt/widgets/uputstvo_dialog.dart';
+import '../widgets/footer.dart';
 
 class FrontPage extends StatefulWidget {
   const FrontPage({super.key});
@@ -112,6 +113,9 @@ class _FrontPageState extends State<FrontPage> {
                         ),
                       ),
                     ),
+                      const SizedBox(height: 150), // primer razmaka
+                      // Dodaj footer na dnu
+                      CustomFooter(isMobile: isMobile)
                   ],
                 ),
               ],

@@ -8,6 +8,7 @@ import 'dart:html' as html;
 import 'dart:typed_data';
 import 'package:flutter/services.dart';
 import 'dart:convert';
+import '../widgets/footer.dart';
 
 class NebudiCaciScreen extends StatelessWidget {
   const NebudiCaciScreen({super.key});
@@ -129,11 +130,14 @@ class NebudiCaciScreen extends StatelessWidget {
                   },
                 ),
                 const SizedBox(height: 30),
+                
               ],
             ),
           ),
         ),
+        
       ),
+      
     );
   }
 
