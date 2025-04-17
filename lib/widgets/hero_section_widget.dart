@@ -35,6 +35,7 @@ class HeroSection extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        //TODO:TESTIRAJ RESPONZIVNOST OVDE, MOŽE ŠAMETNIJE SIGURNO
                         Padding(
                           padding: EdgeInsets.only(right: isMobile ? 20 : 30),
                           child: Column(

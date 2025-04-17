@@ -110,14 +110,12 @@ class CustomFooter extends StatelessWidget {
         _linkText(
           'Uslovi korišćenja',
           '',
-          showDialogContent:
-              AppStringsSrb.usloviKoriscenja,
+          showDialogContent: AppStringsSrb.usloviKoriscenja,
         ),
         _linkText(
           'Politika privatnosti',
           '',
-          showDialogContent:
-              AppStringsSrb.politikaPrivatnosti,
+          showDialogContent: AppStringsSrb.politikaPrivatnosti,
         ),
       ],
     );
@@ -139,10 +137,7 @@ class CustomFooter extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    text,
-                    style: dekkoTextSmall
-                  ),
+                  Text(text, style: dekkoTextSmall),
                   Container(height: 2, width: 120, color: Colors.red),
                 ],
               ),
@@ -156,11 +151,13 @@ class CustomFooter extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text(title, style: deliciousTextStyleBigRed,),
-          content: SingleChildScrollView(child: Text(content, style: dekkoTextSmall,)),
+          title: Text(title, style: deliciousTextStyleBigRed),
+          content: SingleChildScrollView(
+            child: Text(content, style: dekkoTextSmall),
+          ),
           actions: [
             TextButton(
-              child: const Text('Zatvori'),
+              child: Text('Zatvori', style: dekkoTextSmall),
               onPressed: () => Navigator.of(context).pop(),
             ),
           ],
