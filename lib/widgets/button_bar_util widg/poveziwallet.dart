@@ -61,6 +61,112 @@ class _ConnectWalletButtonState extends State<ConnectWalletButton> {
     if (kIsWeb) {
       if (defaultTargetPlatform == TargetPlatform.android ||
           defaultTargetPlatform == TargetPlatform.iOS) {
+        final shouldLaunch = await showDialog<bool>(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: const Text("Poveži se sa MetaMask"),
+              content: const Text(
+                "Da biste povezali novčanik, bićete preusmereni na MetaMask aplikaciju. "
+                "Ako je nemate instaliranu, bićete preusmereni na prodavnicu.",
+              ),
+              actions: [
+                TextButton(
+                  child: const Text("Otkaži"),
+                  onPressed: () => Navigator.of(context).pop(false),
+                ),
+                TextButton(
+                  child: const Text("Nastavi"),
+                  onPressed: () => Navigator.of(context).pop(true),
+                ),
+              ],
+            );
+          },
+        );
+
+        if (shouldLaunch != true) {
+          return; // korisnik je otkazao
+        }
+
+        final deepLinkUri = Uri.parse(
+          'https://metamask.app.link/dapp/cacicoin.com',
+        );
+
+        if (await canLaunchUrl(deepLinkUri)) {
+          await launchUrl(deepLinkUri, mode: LaunchMode.externalApplication);
+          if (context.mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text("Otvaramo MetaMask aplikaciju..."),
+                duration: Duration(seconds: 3),
+                behavior: SnackBarBehavior.floating,
+              ),
+            );
+          }
+        } else {
+          if (context.mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text("Ne mogu da otvorim MetaMask aplikaciju."),
+                duration: Duration(seconds: 3),
+                behavior: SnackBarBehavior.floating,
+                backgroundColor: Colors.red,
+              ),
+            );
+          }
+        }
+
+        return;
+      }
+
+      // Desktop (ekstenzija)
+      try {
+        final isProviderAvailable = await js_util.promiseToFuture(
+          checkWeb3ProviderJs(),
+        );
+
+        if (!isProviderAvailable) {
+          throw Exception("MetaMask nije pronađen");
+        }
+
+        final account = await js_util.promiseToFuture(requestAccountJs());
+        setState(() {
+          isConnected = true;
+          address = account.toString();
+        });
+        widget.onConnected(address);
+        localStorageSetItem('walletAddress', address);
+
+        if (context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text("Povezan uspešno 🎉"),
+              duration: Duration(seconds: 2),
+              behavior: SnackBarBehavior.floating,
+              backgroundColor: Colors.green,
+            ),
+          );
+        }
+      } catch (e) {
+        if (context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text("Greška pri povezivanju: ${e.toString()}"),
+              duration: Duration(seconds: 3),
+              behavior: SnackBarBehavior.floating,
+              backgroundColor: Colors.red,
+            ),
+          );
+        }
+      }
+    }
+  }
+
+  /*
+  Future<void> connectWallet() async {
+    if (kIsWeb) {
+      if (defaultTargetPlatform == TargetPlatform.android ||
+          defaultTargetPlatform == TargetPlatform.iOS) {
         final metamaskAppUrl = Uri.parse('https://metamask.app/');
         if (await canLaunchUrl(metamaskAppUrl)) {
           await launchUrl(metamaskAppUrl);
@@ -147,7 +253,7 @@ class _ConnectWalletButtonState extends State<ConnectWalletButton> {
         }
       }
     }
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
