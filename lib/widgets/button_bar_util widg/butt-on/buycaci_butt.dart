@@ -45,6 +45,16 @@ class BuyButton extends StatelessWidget {
       );
 
       if (txResult == 'mobile_transaction_initiated') {
+        // Umesto js, koristimo prosto preusmeravanje na deep link
+        if (isMobile()) {
+          // Deep link za MetaMask na mobilnim uređajima
+          final url = "metamask://dapp/${Uri.encodeFull(Uri.base.toString())}";
+          // Otvorite deep link
+          print("Otvori MetaMask deep link: $url");
+          // U stvarnoj aplikaciji, možete koristiti Flutter plugin za deep link
+          // kao što je url_launcher za otvaranje URL-a
+        }
+
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text(
@@ -73,6 +83,13 @@ class BuyButton extends StatelessWidget {
     } finally {
       onFinish();
     }
+  }
+
+  // Provera da li je korisnik na mobilnom uređaju
+  bool isMobile() {
+    // Provera osnovnih uređaja, ovo može da se prilagodi prema vašim potrebama
+    return (Theme.of(context).platform == TargetPlatform.iOS ||
+        Theme.of(context).platform == TargetPlatform.android);
   }
 
   @override
