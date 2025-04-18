@@ -47,7 +47,7 @@ class CustomFooter extends StatelessWidget {
           ),
           const Divider(thickness: 1, height: 1, color: Colors.black),
           const SizedBox(height: 10),
-          Text('© 2025 ĆaciCoin. All rights reserved.', style: dekkoTextSmall),
+          Text('© 2025 ĆaciCoin. All rights reserved.', style: darkerGrotesqueSmallBlack),
           const SizedBox(height: 10),
         ],
       ),
@@ -104,7 +104,7 @@ class CustomFooter extends StatelessWidget {
       children: [
         Text(
           'Kontakt',
-          style: dekkoTextStyle.copyWith(fontSize: isMobile ? 20 : 28),
+          style: darkerGrotesqueBlack.copyWith(fontSize: isMobile ? 20 : 28),
         ),
         _linkText('cacicoins@gmail.com', 'mailto:cacicoins@gmail.com'),
         _linkText(
@@ -137,7 +137,7 @@ class CustomFooter extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(text, style: dekkoTextSmall),
+                  Text(text, style: darkerGrotesqueSmallBlack),
                   Container(height: 2, width: 120, color: Colors.red),
                 ],
               ),
@@ -151,13 +151,13 @@ class CustomFooter extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text(title, style: deliciousTextStyleBigRed),
+          title: Text(title, style: deliciousTextStyleRed),
           content: SingleChildScrollView(
-            child: Text(content, style: dekkoTextSmall),
+            child: Text(content, style: darkerGrotesqueSmallBlack),
           ),
           actions: [
             TextButton(
-              child: Text('Zatvori', style: dekkoTextSmall),
+              child: Text('Zatvori', style: darkerGrotesqueSmallBlackW),
               onPressed: () => Navigator.of(context).pop(),
             ),
           ],

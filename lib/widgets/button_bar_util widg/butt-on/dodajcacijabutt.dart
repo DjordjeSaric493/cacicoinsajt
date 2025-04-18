@@ -41,7 +41,7 @@ class PixelArtButton extends StatelessWidget {
         _showPixelArtDialog(context);
         onPressed?.call(); // Poziva dodatnu logiku ako postoji
       },
-      child: Text('Dodaj Ćacija', style: dekkoTextSmallWhite),
+      child: Text('Dodaj Ćacija', style: darkerGrotesqueWhite),
     );
   }
 }

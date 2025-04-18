@@ -140,7 +140,7 @@ class _CaciCoinSectionState extends State<CaciCoinSection> {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),
-            textStyle: dekkoTextSmall,
+            textStyle: darkerGrotesqueSmallBlack,
           ),
         ),
         SizedBox(height: 26),
@@ -161,7 +161,7 @@ class _CaciCoinSectionState extends State<CaciCoinSection> {
                     border: OutlineInputBorder(),
                     labelText:
                         'Unesite količinu tokena', // Dodat label za textbox
-                    labelStyle: dekkoTextSmall, // Dodajte ovaj stil
+                    labelStyle: darkerGrotesqueSmallBlack, // Dodajte ovaj stil
                     contentPadding: EdgeInsets.symmetric(
                       horizontal: 8,
                       vertical: 8,
@@ -193,7 +193,7 @@ class _CaciCoinSectionState extends State<CaciCoinSection> {
                 padding: const EdgeInsets.all(8.0), // Unutrašnji padding teksta
                 child: Text(
                   'Vrednost u BNB: ${bnbValue.toStringAsFixed(8)}',
-                  style: dekkoTextSmall,
+                  style: darkerGrotesqueSmallBlack,
                 ),
               ),
             ],

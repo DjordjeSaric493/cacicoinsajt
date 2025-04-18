@@ -37,7 +37,7 @@ class OpiscacijaScreen extends StatelessWidget {
                 const SizedBox(height: 20),
                 Text(
                   OpisCacijaSrb.opis,
-                  style: dekkoTextStyle.copyWith(
+                  style: darkerGrotesqueBlack.copyWith(
                     fontSize:
                         isMobile
                             ? 20

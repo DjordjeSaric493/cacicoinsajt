@@ -1,3 +1,4 @@
+import 'package:cacicoinsajt/utils/text/textstyles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
@@ -75,7 +76,7 @@ class _UputstvoButtonState extends State<UputstvoButton> with SingleTickerProvid
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text('Uputstvo', style: TextStyle(color: Colors.white)),
+              Text('Uputstvo', style: darkerGrotesqueSmallWhite),
               const SizedBox(width: 8),
               Icon(
                 _isExpanded ? Icons.arrow_drop_up : Icons.arrow_drop_down,

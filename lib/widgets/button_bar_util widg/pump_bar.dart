@@ -52,7 +52,7 @@ class _PresalePumpWidgetState extends State<PresalePumpWidget> {
 
         Text(
           'Pre-sale traje još ${durationInDays - daysElapsed} dana!',
-          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          style: darkerGrotesqueSmallBlack,
         ),
 
         const SizedBox(height: 20),

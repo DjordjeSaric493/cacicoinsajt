@@ -109,7 +109,7 @@ class _SocialMediaButtonState extends State<SocialMediaButton>
               });
             },
             icon: const Icon(Icons.web),
-            label: Text('Mreže', style: dekkoTextStyleWhite),
+            label: Text('Mreže', style: darkerGrotesqueWhite),
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color.fromARGB(255, 70, 70, 70),
               foregroundColor: Colors.white,
@@ -223,7 +223,7 @@ class _SocialMediaButtonState extends State<SocialMediaButton>
                       opacity: animation,
                       child: Text(
                         text,
-                        style: dekkoTextStyle.copyWith(fontSize: 16),
+                        style: darkerGrotesqueBlack.copyWith(fontSize: 16),
                       ),
                     ),
                   ],
@@ -237,7 +237,7 @@ class _SocialMediaButtonState extends State<SocialMediaButton>
                       opacity: animation,
                       child: Text(
                         text,
-                        style: dekkoTextStyle.copyWith(fontSize: 16),
+                        style: darkerGrotesqueBlack.copyWith(fontSize: 16),
                       ),
                     ),
                   ],

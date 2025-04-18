@@ -1,3 +1,4 @@
+import 'package:cacicoinsajt/utils/text/textstyles.dart';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart'; // Dodajte ovaj import za deljenje
 
@@ -13,9 +14,9 @@ class PumpajCaciButton extends StatelessWidget {
         Share.share(websiteUrl); // Koristimo share_plus za deljenje URL-a
       },
       icon: const Icon(Icons.directions_bike), // Koristimo ikonicu bicikle
-      label: const Text(
+      label: Text(
         'PUMPAJ ĆACICOIN-E',
-        style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+        style: darkerGrotesqueSmallWhiteW,
       ),
       style: ElevatedButton.styleFrom(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),

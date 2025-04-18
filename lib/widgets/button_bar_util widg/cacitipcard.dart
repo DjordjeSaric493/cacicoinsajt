@@ -28,7 +28,7 @@ class CaciTipCard extends StatelessWidget {
           crossAxisAlignment:
               CrossAxisAlignment.stretch, // Rastezanje dugmeta horizontalno
           children: <Widget>[
-            Text(title, style: dekkoTextStyle, textAlign: TextAlign.center),
+            Text(title, style: darkerGrotesqueBlack, textAlign: TextAlign.center),
             const SizedBox(height: 8), // Dodat razmak između teksta i dugmeta
             ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: buttonColor),
