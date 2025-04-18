@@ -50,12 +50,12 @@ class Cacilend extends StatelessWidget {
                   'Prst na čelo ćaci, na zidu si, a voleo bi da nisi! '
                   'Dobra vest je da postoji način, loša vest za tebe - nema'
                   ' "kozmetike", zahteva suštinu. Nepoznata teritorija,'
-                  ' hmmm… jeste, ali ne brini!'
+                  ' hmmm… jeste, ali ne brini! '
                   'Pokaži za početak dovoljno skromnosti da prihvatiš činjenično stanje, '
                   'preuzmi odgovornost za situaciju u kojoj se nalaziš, pronađi hrabrosti u sebi '
                   'za potrebnu inicijativu u delima koja ti pomažu da se suočiš sa svim izazovima '
                   'i ovo mesto ovde će ti ukazati neverovatnu moć izbora!',
-                  style: dekkoTextStyle.copyWith(fontSize: isMobile ? 20 : 28),
+                  style: darkerGrotesqueBlack.copyWith(fontSize: isMobile ? 20 : 28),
                   textAlign: TextAlign.justify,
                 ),
                 const SizedBox(height: 20),

@@ -48,10 +48,10 @@ class _DescriptionSectionState extends State<DescriptionSection> {
                   children: [
                     Text(
                       AppStringsSrb.readDescription,
-                      style: GoogleFonts.dekko(
+                      style: GoogleFonts.darkerGrotesque(
                         color: Colors.red,
                         fontSize: widget.isMobile ? 24 : 46,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w500
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -65,11 +65,11 @@ class _DescriptionSectionState extends State<DescriptionSection> {
                         foregroundColor: Colors.white,
                         padding: const EdgeInsets.symmetric(
                           horizontal: 24,
-                          vertical: 12,
+                          vertical: 18,
                         ),
-                        textStyle: GoogleFonts.dekko(
+                        textStyle: GoogleFonts.darkerGrotesque(
                           fontSize: widget.isMobile ? 18 : 24,
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                       child: Text(AppStringsSrb.descriptionButton),
@@ -83,7 +83,7 @@ class _DescriptionSectionState extends State<DescriptionSection> {
                   children: [
                     Text(
                       AppStringsSrb.readDescription,
-                      style: GoogleFonts.dekko(color: Colors.red, fontSize: 40),
+                      style: GoogleFonts.darkerGrotesque(color: Colors.red, fontSize: 40),
                       textAlign: TextAlign.justify,
                     ),
                     const SizedBox(width: 16),
@@ -98,9 +98,9 @@ class _DescriptionSectionState extends State<DescriptionSection> {
                           horizontal: 24,
                           vertical: 12,
                         ),
-                        textStyle: GoogleFonts.dekko(
+                        textStyle: GoogleFonts.darkerGrotesque(
                           fontSize: 24,
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                       child: Text(AppStringsSrb.descriptionButton),
@@ -108,23 +108,39 @@ class _DescriptionSectionState extends State<DescriptionSection> {
                   ],
                 ),
               ],
-              const SizedBox(height: 30),
+              const SizedBox(height: 80),
               Center(
                 child: Text(
-                  AppStringsSrb.whoAreWe,
+                  AppStringsSrb.staJeCaciCoin,
                   style: deliciousTextStyleBig,
-                  textAlign: TextAlign.justify,
+                  textAlign: TextAlign.center,
                 ),
               ),
               const SizedBox(height: 20),
               Center(
                 child: Text(
-                  AppStringsSrb.whoAreWeDescription,
-                  style: dekkoTextStyle.copyWith(fontSize: widget.isMobile ? 20 : 28), //isMobile
+                  AppStringsSrb.staJeCaciCoinDescription,
+                  style: darkerGrotesqueBlack.copyWith(fontSize: widget.isMobile ? 20 : 28), //isMobile
                   textAlign: TextAlign.justify,
                 ),
               ),
-              const SizedBox(height: 15),
+              Center(
+                child: Text(
+                  AppStringsSrb.koSmoMi,
+                  style: deliciousTextStyleBig,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              const SizedBox(height: 20),
+              Center(
+                child: Text(
+                  AppStringsSrb.koSmoMiDescription,
+                  style: darkerGrotesqueBlack.copyWith(fontSize: widget.isMobile ? 20 : 28), //isMobile
+                  textAlign: TextAlign.justify,
+                ),
+              ),
+            
+              const SizedBox(height: 8),
               SocialMediaButton(
                 isMobile: widget.isMobile,
               ), //widget.isMobile da prati iz parent-a dal je mobilno

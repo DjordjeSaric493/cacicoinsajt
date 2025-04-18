@@ -18,12 +18,18 @@ class AppStringsSrb {
       "Pažnja đaci, evo kako da se kupi Ćaci!";
   static const String readDescription = "pročitaj detaljan opis klikom na";
   static const String descriptionButton = "opis Ćacija";
-  static const String whoAreWe = "Ko smo mi?";
-  static const String whoAreWeDescription =
-      "Mi smo tim koji stoji iza ĆaciCoin-a - inovativnog kripto projekta na internetu, edukativno - zabavnog karaktera! "
-      "ĆaciCoin je parodija na etiku ličnosti, ali sa ozbiljnom misijom - da ukaže na pogrešne vrednosti i pokrene etiku karaktera.\n\n"
-      "Iako sve radimo sa osmehom, ne zaboravljamo ni one kojima je pomoć najpotrebnija, zato će ĆaciCoin imati i humanitarnu crtu, jer smeh i dobrota idu ruku pod ruku!\n\n"
-      "Pridruži se našoj zajednici i postani deo kripto revolucije u buđenju svesti, empatije i savesti kod ljudi!";
+  static const String staJeCaciCoin = "Šta je ĆaciCoin?";
+  static const String staJeCaciCoinDescription = """
+ĆaciCoin je mim token edukativno zabavnog karaktera iza koga stoji interesantna priča popularne društvene paradigme u Srbiji koja ima za cilj da izmami osmeh i da probudi svest kod ljudi.
+ĆaciCoin je parodija na etiku ličnosti, ali sa ozbiljnom misijom da ukaže na pogrešne vrednosti i pokrene ektiku karaktera.
+""";
+static const String koSmoMi = "Ko smo mi?";
+  static const String koSmoMiDescription = """
+Mi smo tim koji stoji iza ĆaciCoin-a - inovativnog kripto projekta na internetu, edukativno – zabavnog karaketa. Iako sve radimo sa osmehom, ne zaboravljamo ni one kojima je pomoć najpotrebnija, zato ĆaciCoin ima i humanitarnu crtu, jer smeh i dobrota idu ruku pod ruku!
+
+Pridruži se našoj zajednici i postani deo kripto revolucije u buđenju svesti, empatije i savesti kod ljudi!
+""";
+
   static const String phenomenon = "FENOMEN";
   static const String caci = "ĆACI";
 

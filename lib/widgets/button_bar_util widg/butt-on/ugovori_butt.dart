@@ -64,7 +64,7 @@ class _UgovoriButtonState extends State<UgovoriButton>
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('Ugovori', style: dekkoTextSmall),
+              Text('Ugovori', style: darkerGrotesqueSmallBlack),
               SizedBox(width: 8),
               Icon(Icons.arrow_drop_down),
             ],
@@ -113,7 +113,7 @@ class _UgovoriButtonState extends State<UgovoriButton>
                           ), // Malo manje zaobljenja od ivice
                         ),
                       ),
-                      child: Text('CaciToken Ugovor', style: dekkoTextSmall),
+                      child: Text('CaciToken Ugovor', style: darkerGrotesqueSmallBlack),
                     ),
                   ),
                 ),
@@ -138,7 +138,7 @@ class _UgovoriButtonState extends State<UgovoriButton>
                           borderRadius: BorderRadius.circular(6.0),
                         ),
                       ),
-                      child: Text('Presale Ugovor', style: dekkoTextSmall),
+                      child: Text('Presale Ugovor', style: darkerGrotesqueSmallBlack),
                     ),
                   ),
                 ),

@@ -12,13 +12,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     final appBarWidth =
         isMobile
             ? MediaQuery.of(context).size.width * 0.90
-            : MediaQuery.of(context).size.width * 0.7;
+            : MediaQuery.of(context).size.width * 1;
 
     return isMobile
         ? AppBar(
           backgroundColor: const Color(0xFFD9D9D9),
           elevation: 0,
-          title: Text('ĆaciLend Meni', style: dekkoTextStyleWhite),
+          title: Text('ĆaciLend Meni', style: darkerGrotesqueBlack),
         )
         : PreferredSize(
           preferredSize: const Size.fromHeight(60),
@@ -26,7 +26,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             child: Container(
               width: appBarWidth,
               decoration: const BoxDecoration(
-                color: Color(0xFFD9D9D9),
+                color: Color.fromARGB(255, 217, 217, 217),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(10),
                   bottomRight: Radius.circular(10),
@@ -67,7 +67,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: onPressed,
         child: Text(
           title,
-          style: dekkoTextStyle,
+          style: darkerGrotesqueWhiteW,
           overflow: TextOverflow.ellipsis,
         ),
       ),
@@ -81,7 +81,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: onPressed,
         child: Text(
           title,
-          style: dekkoTextStyleRed,
+          style: darkerGrotesqueRedW,
           overflow: TextOverflow.ellipsis,
         ),
       ),

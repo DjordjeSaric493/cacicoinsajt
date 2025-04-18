@@ -78,7 +78,7 @@ class BuyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 25)),
+      style: ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 25,)),
       onPressed: isConnected && !isLoading ? buyTokens : null,
       child:
           isLoading
@@ -87,7 +87,7 @@ class BuyButton extends StatelessWidget {
                 height: 60,
                 child: CircularProgressIndicator(strokeWidth: 2),
               )
-              : Text('Kupi', style: dekkoTextStyle),
+              : Text('Kupi', style: darkerGrotesqueBlack),
     );
   }
 }

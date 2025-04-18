@@ -43,7 +43,7 @@ class NebudiCaciScreen extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   'U komplikovanim, turbulentnim vremenima, u kojima stvarnost poprima obrise mnogo veće od nas samih, budi Ćaci-ne budi Ćaci, postaje ključni individualni doprinos potonuća ili prosperiteta čitave nacije. Prepoznaj, promeni, pobedi Ćacija, kako u sebi, tako i oko sebe. Upoznaj se sa trajnom edukacijom!',
-                  style: dekkoTextStyle.copyWith(fontSize: isMobile ? 20 : 28),
+                  style: darkerGrotesqueBlack.copyWith(fontSize: isMobile ? 20 : 28),
                   textAlign: TextAlign.justify,
                 ),
                 const SizedBox(
@@ -64,7 +64,7 @@ class NebudiCaciScreen extends StatelessWidget {
                       title: '${index + 1}. deo',
                       buttonText: index == 0 ? 'Opis' : 'Uskoro',
                       buttonColor: const Color.fromARGB(255, 250, 4, 16),
-                      buttonTextStyle: dekkoTextStyle,
+                      buttonTextStyle: darkerGrotesqueWhite,
                       onPressed:
                           index == 0
                               ? () {

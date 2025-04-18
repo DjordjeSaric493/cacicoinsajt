@@ -21,33 +21,33 @@ class MobileDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           DrawerHeader(
-            decoration: BoxDecoration(color: Color(0xFFD9D9D9)),
-            child: Text('ĆaciLend Meni', style: dekkoTextStyle),
+            decoration: BoxDecoration(color: Color.fromARGB(255, 217, 217, 217)),
+            child: Text('ĆaciLend Meni', style: darkerGrotesqueBlackW),
           ),
 
           ListTile(
-            title: Text('ĆaciCoin', style: dekkoTextStyle),
+            title: Text('ĆaciCoin', style: darkerGrotesqueBlack),
             onTap: () {
               Navigator.pop(context); // zatvara drawer
               Navigator.pushNamed(context, '/cacicoin');
             },
           ),
           ListTile(
-            title: Text('Ćacilend', style: dekkoTextStyleRed),
+            title: Text('Ćacilend', style: darkerGrotesqueRed),
             onTap: () {
               Navigator.pop(context); // zatvara drawer
               Navigator.pushNamed(context, '/cacilend');
             },
           ),
           ListTile(
-            title: Text('"Ćaci"', style: dekkoTextStyle),
+            title: Text('"Ćaci"', style: darkerGrotesqueBlack),
             onTap: () {
               Navigator.pop(context); // zatvara drawer
               Navigator.pushNamed(context, '/opiscacija');
             },
           ),
           ListTile(
-            title: Text('Ne budi ćaci', style: dekkoTextStyle),
+            title: Text('Ne budi ćaci', style: darkerGrotesqueBlack),
             onTap: () {
               Navigator.pop(context); // zatvara drawer
               Navigator.pushNamed(context, '/nebudicaci');

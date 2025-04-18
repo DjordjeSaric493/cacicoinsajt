@@ -176,8 +176,8 @@ class _PixelArtUploadFormState extends State<PixelArtUploadForm> {
       context: context,
       builder:
           (context) => AlertDialog(
-            title: Text("Uspešno!", style: dekkoTextSmall),
-            content: Text("Slika je preuzeta.", style: dekkoTextSmall),
+            title: Text("Uspešno!", style: darkerGrotesqueSmallBlack),
+            content: Text("Slika je preuzeta.", style: darkerGrotesqueSmallBlack),
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(context),
@@ -244,7 +244,7 @@ class _PixelArtUploadFormState extends State<PixelArtUploadForm> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Pixel Ćaci Upload', style: dekkoTextStyleRed),
+              Text('Pixel Ćaci Upload', style: darkerGrotesqueRedW),
               IconButton(
                 icon: const Icon(Icons.close),
                 onPressed: () => Navigator.pop(context),
@@ -255,13 +255,13 @@ class _PixelArtUploadFormState extends State<PixelArtUploadForm> {
           const SizedBox(height: 20),
           Text(
             'Opis -> Atribut + Ćaci',
-            style: dekkoTextStyle,
+            style: darkerGrotesqueBlack,
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 10),
           Text(
             'pr. Zli Ćaci, Ludi Ćaci',
-            style: dekkoTextSmall,
+            style: darkerGrotesqueBlack,
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 20),
@@ -287,7 +287,7 @@ class _PixelArtUploadFormState extends State<PixelArtUploadForm> {
             controller: _walletController,
             decoration: InputDecoration(
               labelText: 'Unesi Wallet adresu',
-              labelStyle: dekkoTextSmall,
+              labelStyle: darkerGrotesqueSmallBlack,
               hintText: '0x... (42 karaktera)',
               border: const OutlineInputBorder(),
               errorText:
@@ -305,11 +305,11 @@ class _PixelArtUploadFormState extends State<PixelArtUploadForm> {
 
           ElevatedButton(
             onPressed: _pickImage,
-            child: const Text('Izaberi sliku'),
+            child: Text('Izaberi sliku', style: darkerGrotesqueSmallBlackW,),
           ),
           const SizedBox(height: 20),
           if (_editedImage != null) ...[
-            const Text("Pregled slike:", textAlign: TextAlign.center),
+            Text("Pregled slike:", textAlign: TextAlign.center, style: darkerGrotesqueSmallBlack,),
             const SizedBox(height: 10),
             Image.memory(_editedImage!, fit: BoxFit.contain),
             const SizedBox(height: 10),
@@ -318,12 +318,12 @@ class _PixelArtUploadFormState extends State<PixelArtUploadForm> {
                   ? '${_wordController.text.trim()} Ćaci'
                   : 'Ćaci',
               textAlign: TextAlign.center,
-              style: dekkoTextSmall,
+              style: darkerGrotesqueSmallBlack,
             ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _downloadImage,
-              child: const Text("Preuzmi sliku"),
+              child: Text("Preuzmi sliku", style: darkerGrotesqueSmallBlackW,),
             ),
           ],
           const SizedBox(height: 20),
@@ -338,7 +338,7 @@ class _PixelArtUploadFormState extends State<PixelArtUploadForm> {
                     ? const CircularProgressIndicator(color: Colors.white)
                     : Text(
                       "Pošalji i zaradi Ćacicoin-e",
-                      style: dekkoTextSmall,
+                      style: darkerGrotesqueSmallBlackW,
                     ),
           ),
         ],

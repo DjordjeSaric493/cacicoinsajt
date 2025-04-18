@@ -61,3 +61,84 @@ final TextStyle patrickHandTextStyle = GoogleFonts.patrickHand(
   fontWeight: FontWeight.w400, // Regular težina
   color: Colors.black,
 );
+
+
+final TextStyle darkerGrotesqueSmallWhite = GoogleFonts.darkerGrotesque(
+  fontSize: 18,
+  fontWeight: FontWeight.w400, // Regular težina
+  color: Colors.white,
+);
+
+
+final TextStyle darkerGrotesqueWhite = GoogleFonts.darkerGrotesque(
+  fontSize: 32,
+  fontWeight: FontWeight.w400, // Regular težina
+  color: Colors.white,
+);
+
+final TextStyle darkerGrotesqueSmallBlack = GoogleFonts.darkerGrotesque(
+  fontSize: 18,
+  fontWeight: FontWeight.w400, // Regular težina
+  color: Colors.black,
+);
+
+
+final TextStyle darkerGrotesqueBlack = GoogleFonts.darkerGrotesque(
+  fontSize: 32,
+  fontWeight: FontWeight.w400, // Regular težina
+  color: Colors.black,
+);
+
+final TextStyle darkerGrotesqueSmallRed = GoogleFonts.darkerGrotesque(
+  fontSize: 18,
+  fontWeight: FontWeight.w400, // Regular težina
+  color: const Color.fromARGB(255, 240, 24, 24),
+);
+
+
+final TextStyle darkerGrotesqueRed = GoogleFonts.darkerGrotesque(
+  fontSize: 32,
+  fontWeight: FontWeight.w400, // Regular težina
+  color: const Color.fromARGB(255, 240, 24, 24),
+);
+
+
+
+final TextStyle darkerGrotesqueSmallWhiteW = GoogleFonts.darkerGrotesque(
+  fontSize: 18,
+  fontWeight: FontWeight.w600, // Regular težina
+  color: Colors.white,
+);
+
+
+final TextStyle darkerGrotesqueWhiteW = GoogleFonts.darkerGrotesque(
+  fontSize: 32,
+  fontWeight: FontWeight.w600, // Regular težina
+  color: Colors.white,
+);
+
+final TextStyle darkerGrotesqueSmallBlackW = GoogleFonts.darkerGrotesque(
+  fontSize: 18,
+  fontWeight: FontWeight.w600, // Regular težina
+  color: Colors.black,
+);
+
+
+final TextStyle darkerGrotesqueBlackW = GoogleFonts.darkerGrotesque(
+  fontSize: 32,
+  fontWeight: FontWeight.w600, // Regular težina
+  color: Colors.black,
+);
+
+final TextStyle darkerGrotesqueSmallRedW = GoogleFonts.darkerGrotesque(
+  fontSize: 18,
+  fontWeight: FontWeight.w600, // Regular težina
+  color: const Color.fromARGB(255, 240, 24, 24),
+);
+
+
+final TextStyle darkerGrotesqueRedW = GoogleFonts.darkerGrotesque(
+  fontSize: 32,
+  fontWeight: FontWeight.w600, // Regular težina
+  color: const Color.fromARGB(255, 240, 24, 24),
+);

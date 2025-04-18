@@ -18,25 +18,25 @@ class PixelArtScreen extends StatelessWidget {
         children: [
           Text(
             'Dodaj Ćacija',
-            style: dekkoTextStyleRed,
+            style: darkerGrotesqueRed,
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 10),
           Text(
             'Tvoj Ćaci će biti ubačen u Ćacilend i prikazan na sajtu!!!',
             textAlign: TextAlign.center,
-            style: dekkoTextStyle,
+            style: darkerGrotesqueBlack,
           ),
           const SizedBox(height: 10),
           Text(
             'Nagrada: 1000 Ćacicoin-a (max 3 puta po wallet-u)',
-            style: dekkoTextStyleRed,
+            style: darkerGrotesqueRed,
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () => _showPixelArtUploadDialog(context),
-            child: Text('Ubaci svoju sliku', style: dekkoTextSmall),
+            child: Text('Ubaci svoju sliku', style: darkerGrotesqueSmallBlackW),
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.blueAccent,
               foregroundColor: Colors.white,
