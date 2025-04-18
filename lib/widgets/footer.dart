@@ -14,8 +14,17 @@ class CustomFooter extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Container(
-      width: double.infinity,
-      color: const Color(0xFFD9D9D9),
+    width: double.infinity,
+    decoration: const BoxDecoration(
+      gradient: LinearGradient(
+        colors: [
+          Color.fromARGB(255, 227, 227, 227), // Početna svetlo siva
+          Color.fromARGB(255, 118, 118, 118), // Završna malo tamnija siva
+        ],
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+      ),
+    ),
       child: Column(
         children: [
           // Gornji deo sa ikonama i sadržajem
@@ -39,16 +48,25 @@ class CustomFooter extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        _buildSocialIcons(),
                         _buildCenterLogo(),
                         _buildContactLinks(TextAlign.left),
+                        _buildSocialIcons(),
                       ],
                     ),
           ),
           const Divider(thickness: 1, height: 1, color: Colors.black),
-          const SizedBox(height: 10),
-          Text('© 2025 ĆaciCoin. All rights reserved.', style: darkerGrotesqueSmallBlack),
-          const SizedBox(height: 10),
+          
+          Container(
+            width: double.infinity,
+            color: Colors.black87, // Tamno siva ili crna
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: Text(
+              '© 2025 ĆaciCoin. All rights reserved.',
+              style: darkerGrotesqueSmallWhite, // Svetliji tekst
+              textAlign: TextAlign.center,
+            ),
+          ),
+          
         ],
       ),
     );
@@ -59,12 +77,12 @@ class CustomFooter extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         _socialIcon('https://x.com/CaciCoin', FontAwesomeIcons.x), // X
-        const SizedBox(width: 12),
+        const SizedBox(width: 30),
         _socialIcon(
           'https://www.instagram.com/cacicoin/',
           FontAwesomeIcons.instagram,
         ), // Instagram
-        const SizedBox(width: 12),
+        const SizedBox(width: 30),
         _socialIcon(
           'https://discord.com/invite/x56vRV8N',
           FontAwesomeIcons.discord,
@@ -83,12 +101,12 @@ class CustomFooter extends StatelessWidget {
   Widget _buildCenterLogo() {
     return Column(
       children: [
-        Image.asset('assets/cacicoin.png', height: 80),
-        const SizedBox(height: 8),
+        Image.asset('assets/cacicoin.png', height: 120), // Povećan logo
+        const SizedBox(height: 12),
         Text(
           'ĆACICOIN',
-          style: deliciousTextStyleBigRed.copyWith(
-            fontSize: isMobile ? 20 : 28,
+          style: deliciousTextStyleBig.copyWith(
+            fontSize: isMobile ? 28 : 36, // Povećan tekst
           ),
         ),
       ],

@@ -16,8 +16,27 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
     return isMobile
         ? AppBar(
-          backgroundColor: const Color(0xFFD9D9D9),
           elevation: 0,
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                colors: [
+                  Color.fromARGB(255, 233, 233, 233), // Početna boja
+                  Color.fromARGB(255, 176, 176, 176), // Krajnja boja
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  spreadRadius: 1,
+                  blurRadius: 3,
+                  offset: const Offset(0, 2), // Blaga senka ispod
+                ),
+              ],
+            ),
+          ),
           title: Text('ĆaciLend Meni', style: darkerGrotesqueBlack),
         )
         : PreferredSize(
@@ -25,22 +44,60 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           child: Center(
             child: Container(
               width: appBarWidth,
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 217, 217, 217),
-                borderRadius: BorderRadius.only(
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color.fromARGB(119, 0, 0, 0),
+                    spreadRadius: 1,
+                    blurRadius: 5,
+                    offset: const Offset(0, 0),
+                  ),
+                ],
+                gradient: const LinearGradient(
+                  colors: [
+                    Color.fromARGB(255, 232, 232, 232), // Početna boja
+                    Color.fromARGB(255, 168, 168, 168), // Krajnja boja
+                  ],
+                  begin: Alignment.centerLeft, // Počinje sa leve strane
+                  end: Alignment.centerRight, // Završava sa desne strane
+                ),
+                borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(10),
                   bottomRight: Radius.circular(10),
                 ),
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment:
+                    MainAxisAlignment
+                        .spaceEvenly, // Color.fromARGB(255, 217, 217, 217)
                 children: [
+                  const SizedBox(
+                    width: 260,
+                  ), // Dodajemo malo prostora sa leve strane
+                  // Logo i tekst ĆaciCoin (skroz levo)
+                  Row(
+                    mainAxisSize:
+                        MainAxisSize.min, // Da zauzme samo potreban prostor
+                    children: [
+                      Image.asset(
+                        'assets/cacicoin.png', // Zamenite putanjom do vašeg logoa
+                        height: 60, // Podesite visinu logoa
+                      ),
+                      const SizedBox(width: 8),
+                      Text(
+                        'ĆaciCoin',
+                        style: deliciousTextStyle, // Prilagodite stil teksta
+                      ),
+                    ],
+                  ),
+
+                  const Spacer(), // Gura ostale elemente na desnu stranu
                   //TODO: NALEPI X,INSTAGRAM I DISCORD!!
-                  _buildNavItemRed(
+                  _buildNavItem(
                     'ĆaciCoin',
                     () => Navigator.pushNamed(context, '/cacicoin'),
                   ),
-                  _buildNavItemRed(
+                  _buildNavItem(
                     'Ne budi ćaci!',
                     () => Navigator.pushNamed(context, '/nebudicaci'),
                   ),
@@ -48,11 +105,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                     'Ćacilend',
                     () => Navigator.pushNamed(context, '/cacilend'),
                   ),
-                  _buildNavItemRed(
+                  _buildNavItem(
                     //TODO: OPIS ĆACIJA PAGE
                     '"Ćaci"',
                     () => Navigator.pushNamed(context, '/opiscacija'),
                   ),
+                  SizedBox(width: 260),
                 ],
               ),
             ),
@@ -67,7 +125,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: onPressed,
         child: Text(
           title,
-          style: darkerGrotesqueWhiteW,
+          style: darkerGrotesqueBlack,
           overflow: TextOverflow.ellipsis,
         ),
       ),
@@ -81,7 +139,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: onPressed,
         child: Text(
           title,
-          style: darkerGrotesqueRedW,
+          style: darkerGrotesqueRed,
           overflow: TextOverflow.ellipsis,
         ),
       ),
