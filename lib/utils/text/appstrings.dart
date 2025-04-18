@@ -20,14 +20,25 @@ class AppStringsSrb {
   static const String descriptionButton = "opis Ćacija";
   static const String staJeCaciCoin = "Šta je ĆaciCoin?";
   static const String staJeCaciCoinDescription = """
-ĆaciCoin je mim token edukativno zabavnog karaktera iza koga stoji interesantna priča popularne društvene paradigme u Srbiji koja ima za cilj da izmami osmeh i da probudi svest kod ljudi.
-ĆaciCoin je parodija na etiku ličnosti, ali sa ozbiljnom misijom da ukaže na pogrešne vrednosti i pokrene ektiku karaktera.
+ĆaciCoin je mim token na Binance chain platformi, edukativno - zabavnog karaktera iza koga stoji interesantna priča popularne društvene paradigme u Srbiji, koji ima za cilj da razotkrije stvarnost i probudi odgovornost kod ljudi.
+ 
+ĆaciCoin je parodija na etiku ličnosti, ali sa ozbiljnom misijom da ukaže na pogrešne vrednosti i pokrene etiku karaktera.
+ 
+Iako sve radimo sa osmehom, ne zaboravljamo ni one kojima je pomoć najpotrebnija, zato ĆaciCoin velikim svojim delom ima i humanitarni karakter, jer smeh i dobrota idu ruku pod ruku!
+ 
+Pridruži se našoj zajednici i postani deo kripto revolucije u buđenju svesti, empatije i savesti kod ljudi!
 """;
 static const String koSmoMi = "Ko smo mi?";
   static const String koSmoMiDescription = """
-Mi smo tim koji stoji iza ĆaciCoin-a - inovativnog kripto projekta na internetu, edukativno – zabavnog karaketa. Iako sve radimo sa osmehom, ne zaboravljamo ni one kojima je pomoć najpotrebnija, zato ĆaciCoin ima i humanitarnu crtu, jer smeh i dobrota idu ruku pod ruku!
-
-Pridruži se našoj zajednici i postani deo kripto revolucije u buđenju svesti, empatije i savesti kod ljudi!
+Mi smo još jedan slučajan kripto pokret na internetu, jedinstven u suštinskim stvarima, različit u važnim, velikodušan u svim stvarima.
+ 
+Način na koji smo izabrali da utičemo na društvene okolnosti našim projektom je krajnje neobičan i inovativan, inspirisan ogromnom potrebom za pravednijim društvom i svetlijom budućnošću.
+ 
+Nije nam dugo trebalo da prepoznamo glavni kamen spoticanja - njegovo “veličanstvo” Ćaci i nekako spontano se rodila ideja da ga učinimo besmrtnim i kreiramo mim token.
+ 
+Svim srcem i potencijalima ćemo pokušati da ih osvestimo i nećemo se smiriti dok i poslednjeg ćacija ne transformišemo u istinski ispravnog coveka!
+ 
+Biće to uzbudljiva avantura i pozivamo sve da nam se pridruže u tom procesu!
 """;
 
   static const String phenomenon = "FENOMEN";

@@ -21,8 +21,22 @@ class MobileDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           DrawerHeader(
-            decoration: BoxDecoration(color: Color.fromARGB(255, 217, 217, 217)),
-            child: Text('ĆaciLend Meni', style: darkerGrotesqueBlackW),
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                colors: [
+                  Color.fromARGB(255, 217, 217, 217), // Početna boja
+                  Color.fromARGB(255, 180, 180, 180), // Krajnja boja
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+              
+              
+            ),
+            child: Image.asset(
+              'assets/cacicoin.png', // Zamenite putanjom do vaše slike
+              fit: BoxFit.contain, // Prilagodite kako se slika uklapa
+            ),
           ),
 
           ListTile(
