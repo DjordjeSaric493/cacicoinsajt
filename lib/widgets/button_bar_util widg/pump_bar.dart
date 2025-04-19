@@ -14,7 +14,7 @@ class _PresalePumpWidgetState extends State<PresalePumpWidget> {
   final DateTime startDate = DateTime(
     2025,
     4,
-    16,
+    19,
   ); // Početni datum presale-a, menjaj za ui
   final int durationInDays = 30;
   bool isLoading = false;
