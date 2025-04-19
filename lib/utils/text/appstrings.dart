@@ -36,7 +36,7 @@ Način na koji smo izabrali da utičemo na društvene okolnosti našim projektom
  
 Nije nam dugo trebalo da prepoznamo glavni kamen spoticanja - njegovo “veličanstvo” Ćaci i nekako spontano se rodila ideja da ga učinimo besmrtnim i kreiramo mim token.
  
-Svim srcem i potencijalima ćemo pokušati da ih osvestimo i nećemo se smiriti dok i poslednjeg ćacija ne transformišemo u istinski ispravnog coveka!
+Svim srcem i potencijalima ćemo pokušati da ih osvestimo i nećemo se smiriti dok i poslednjeg ćacija ne transformišemo u istinski ispravnog čoveka!
  
 Biće to uzbudljiva avantura i pozivamo sve da nam se pridruže u tom procesu!
 """;
